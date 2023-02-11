@@ -1,0 +1,30 @@
+{
+  "32e8c722-78cc-48b7-b4dc-4a05304be3e4": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "me,b%2521Cy7yXSlb_02Luk2aAHHsQ1OZ_Hmp4c1Eogkzn-TO9zmpZbG7_hFOSL03ikuV1lrC,01JLCHZNFSULHUFW764JDKVWOCJ2ZP6YD4": {
+        "dataSources": {
+          "grading_table": {
+            "tableName": "{B505CA96-0A90-0E48-AD8C-7880FF6AC738}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "grading_table"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "32e8c722-78cc-48b7-b4dc-4a05304be3e4"
+  }
+}

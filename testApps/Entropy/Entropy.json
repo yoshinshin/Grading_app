@@ -1,0 +1,142 @@
+{
+  "ComponentIndexes": {
+    "Component1": 2
+  },
+  "ControlUniqueGuids": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "Component1": 3,
+    "Gallery2": 13,
+    "Gallery2_1": 21,
+    "Gallery2_2": 4,
+    "galleryTemplate2": 14,
+    "galleryTemplate2_1": 22,
+    "galleryTemplate2_2": 5,
+    "Image2": 15,
+    "Image2_1": 23,
+    "Image2_2": 6,
+    "Label1": 12,
+    "NextArrow2": 17,
+    "NextArrow2_1": 25,
+    "NextArrow2_2": 8,
+    "Screen_List": 11,
+    "Screen1": 20,
+    "Separator2": 19,
+    "Separator2_1": 27,
+    "Separator2_2": 10,
+    "Subtitle2": 18,
+    "Subtitle2_1": 26,
+    "Subtitle2_2": 9,
+    "Title2": 16,
+    "Title2_1": 24,
+    "Title2_2": 7
+  },
+  "FunctionParamsInvariantScripts": {},
+  "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "02/11/2023 06:40:39",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {
+    "32e8c722-78cc-48b7-b4dc-4a05304be3e4": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/3f0a73a73cc544b99ae9e5b0eca94758\""
+  },
+  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalResourceFileNames": {},
+  "LocalResourceRootPaths": {},
+  "OrderComponentMetadata": {
+    "b7d2ef7f18e943548ef45e8054da6cef": 0
+  },
+  "OrderComponentTemplate": {
+    "b7d2ef7f18e943548ef45e8054da6cef": 0
+  },
+  "OrderDataSource": {
+    "CustomGallerySample": 0,
+    "grading_table": 1
+  },
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {
+    "gallery": 1,
+    "icon": 3,
+    "image": 2,
+    "label": 0,
+    "rectangle": 4
+  },
+  "OverridablePropertiesEntry": {
+    "App": {},
+    "Component1": {},
+    "Gallery2": {},
+    "Gallery2_1": {},
+    "Gallery2_2": {},
+    "galleryTemplate2": {},
+    "galleryTemplate2_1": {},
+    "galleryTemplate2_2": {},
+    "Image2": {},
+    "Image2_1": {},
+    "Image2_2": {},
+    "Label1": {},
+    "NextArrow2": {},
+    "NextArrow2_1": {},
+    "NextArrow2_2": {},
+    "Screen_List": {},
+    "Screen1": {},
+    "Separator2": {},
+    "Separator2_1": {},
+    "Separator2_2": {},
+    "Subtitle2": {},
+    "Subtitle2_1": {},
+    "Subtitle2_2": {},
+    "Title2": {},
+    "Title2_1": {},
+    "Title2_2": {}
+  },
+  "PCFDynamicSchemaForIRRetrievalEntry": {},
+  "PublishOrderIndices": {
+    "App": 0,
+    "Component1": 0,
+    "Gallery2": 1,
+    "Gallery2_1": 8,
+    "Gallery2_2": 15,
+    "galleryTemplate2": 2,
+    "galleryTemplate2_1": 9,
+    "galleryTemplate2_2": 16,
+    "Image2": 3,
+    "Image2_1": 10,
+    "Image2_2": 17,
+    "Label1": 0,
+    "NextArrow2": 5,
+    "NextArrow2_1": 12,
+    "NextArrow2_2": 19,
+    "Screen_List": 0,
+    "Screen1": 0,
+    "Separator2": 7,
+    "Separator2_1": 14,
+    "Separator2_2": 21,
+    "Subtitle2": 6,
+    "Subtitle2_1": 13,
+    "Subtitle2_2": 20,
+    "Title2": 4,
+    "Title2_1": 11,
+    "Title2_2": 18
+  },
+  "ResourcesJsonIndices": {
+    "Image-SampleImage": 0
+  },
+  "RuleScreenIdWithoutScreen": {},
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.1805549,
+    "ControlCount": {
+      "b7d2ef7f18e943548ef45e8054da6cef": 1,
+      "gallery": 3,
+      "galleryTemplate": 3,
+      "icon": 3,
+      "image": 3,
+      "label": 7,
+      "rectangle": 3,
+      "screen": 2
+    },
+    "DeserializationLoadTime": 0.6115446,
+    "ErrorCount": 5
+  },
+  "WasLocalDatabaseReferencesEmpty": true
+}
