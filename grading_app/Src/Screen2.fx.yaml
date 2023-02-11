@@ -1,0 +1,47 @@
+Screen2 As screen:
+
+    Dropdown4 As dropdown:
+        Height: =70
+        Items: =["A教室","B教室"]
+        Size: =21
+        Width: =575
+        X: =261
+        Y: =171
+        ZIndex: =1
+
+    Label4 As label:
+        Align: =Align.Center
+        Height: =70
+        Size: =21
+        Text: ="教室・日時を選択"
+        Width: =560
+        X: =231
+        Y: =42
+        ZIndex: =2
+
+    DatePicker2 As datepicker:
+        Height: =70
+        Size: =24
+        Width: =575
+        X: =261
+        Y: =335
+        ZIndex: =3
+
+    Icon1_1 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Screen3, ScreenTransition)
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+    Button2 As button:
+        Height: =70
+        OnSelect: |-
+            =Navigate(Screen1, ScreenTransition,{mode1:Dropdown4.Selected.Value,mode2:DatePicker2.SelectedDate})
+        Size: =24
+        Text: ="次へ"
+        Width: =280
+        X: =408
+        Y: =492
+        ZIndex: =5
+

@@ -1,0 +1,216 @@
+Screen1 As screen:
+
+    Label1 As label:
+        Height: =60
+        Size: =21
+        Text: ="採点者氏名"
+        Width: =156
+        X: =510
+        Y: =552
+        ZIndex: =1
+
+    TextInput1 As text:
+        Default: ="テキスト入力"
+        Height: =70
+        Size: =21
+        Width: =440
+        X: =666
+        Y: =547
+        ZIndex: =2
+
+    Label2 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目１"
+        Width: =165
+        X: =27
+        Y: =195
+        ZIndex: =3
+
+    Label2_1 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目２"
+        Width: =165
+        X: =27
+        Y: =270
+        ZIndex: =4
+
+    Label2_3 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目３"
+        Width: =165
+        X: =27
+        Y: =331
+        ZIndex: =6
+
+    Label2_4 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目４"
+        Width: =165
+        X: =27
+        Y: =399
+        ZIndex: =7
+
+    Label2_5 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目５"
+        Width: =165
+        X: =27
+        Y: =467
+        ZIndex: =8
+
+    Label2_6 As label:
+        Height: =61
+        Size: =21
+        Text: ="採点項目６"
+        Width: =165
+        X: =27
+        Y: =539
+        ZIndex: =9
+
+    Dropdown1 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =195
+        ZIndex: =10
+
+    Dropdown1_1 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =267
+        ZIndex: =11
+
+    Dropdown1_2 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =335
+        ZIndex: =12
+
+    Dropdown1_3 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =408
+        ZIndex: =13
+
+    Dropdown1_4 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =477
+        ZIndex: =14
+
+    Dropdown1_5 As dropdown:
+        Height: =53
+        Items: =["1","2","3","4","5","6"]
+        Size: =21
+        Width: =113
+        X: =203
+        Y: =547
+        ZIndex: =15
+
+    Label3 As label:
+        Height: =70
+        Size: =21
+        Text: ="採点者からのフィードバック"
+        Width: =560
+        X: =349
+        Y: =178
+        ZIndex: =16
+
+    TextInput2 As text:
+        Default: ="テキスト入力"
+        Height: =280
+        Size: =21
+        Width: =756
+        X: =349
+        Y: =248
+        ZIndex: =17
+
+    Dropdown2 As dropdown:
+        Height: =76
+        Items: =["Aグループ","Bグループ","Cグループ","Dグループ","Eグループ"]
+        Size: =21
+        Width: =225
+        X: =147
+        Y: =34
+        ZIndex: =18
+
+    Button1 As button:
+        Height: =106
+        OnSelect: |-
+            =Patch(
+                テーブル1,
+                Defaults(テーブル1),
+                {
+                    グループ名: Dropdown2.Selected.Value,
+                    採点項目１: Dropdown1.Selected.Value,
+                    採点項目２: Dropdown1_1.Selected.Value,
+                    採点項目３: Dropdown1_2.Selected.Value,
+                    採点項目４: Dropdown1_3.Selected.Value,
+                    採点項目５: Dropdown1_4.Selected.Value,
+                    採点項目６: Dropdown1_5.Selected.Value,
+                    採点者からのフィードバック: TextInput2,
+                    採点者氏名: TextInput1,
+                    id: Dropdown3
+                }
+            );Reset(Dropdown2);Reset(Dropdown1);Reset(Dropdown1_1);Reset(Dropdown1_2);Reset(Dropdown1_3);Reset(Dropdown1_4);Reset(Dropdown1_5);Reset(TextInput1);Reset(Dropdown3);
+        Size: =24
+        Text: ="入力完了"
+        Width: =323
+        X: =771
+        Y: =36
+        ZIndex: =20
+
+    Dropdown3 As dropdown:
+        Height: =65
+        Items: =["採点者１","採点者２"]
+        Size: =21
+        Width: =177
+        X: =333
+        Y: =547
+        ZIndex: =21
+
+    Icon1 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Screen2, ScreenTransition)
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+    Label5 As label:
+        Height: =50
+        Size: =21
+        Text: =mode1
+        Width: =210
+        X: =414
+        Y: =14
+        ZIndex: =23
+
+    Label5_1 As label:
+        Height: =50
+        Size: =21
+        Text: |
+            =mode2
+        Width: =210
+        X: =414
+        Y: =77
+        ZIndex: =24
+
