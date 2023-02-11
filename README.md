@@ -1,0 +1,2 @@
+# powerapps
+powerappsの採点アプリケーションのリポジトリ
