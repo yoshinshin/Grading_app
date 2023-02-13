@@ -1,23 +1,5 @@
 Screen1 As screen:
 
-    Label1 As label:
-        Height: =60
-        Size: =21
-        Text: ="採点者氏名"
-        Width: =156
-        X: =510
-        Y: =552
-        ZIndex: =1
-
-    TextInput1 As text:
-        Default: ="テキスト入力"
-        Height: =70
-        Size: =21
-        Width: =440
-        X: =666
-        Y: =547
-        ZIndex: =2
-
     Label2 As label:
         Height: =61
         Size: =21
@@ -42,7 +24,7 @@ Screen1 As screen:
         Text: ="採点項目３"
         Width: =165
         X: =27
-        Y: =331
+        Y: =339
         ZIndex: =6
 
     Label2_4 As label:
@@ -51,7 +33,7 @@ Screen1 As screen:
         Text: ="採点項目４"
         Width: =165
         X: =27
-        Y: =399
+        Y: =408
         ZIndex: =7
 
     Label2_5 As label:
@@ -60,7 +42,7 @@ Screen1 As screen:
         Text: ="採点項目５"
         Width: =165
         X: =27
-        Y: =467
+        Y: =478
         ZIndex: =8
 
     Label2_6 As label:
@@ -69,7 +51,7 @@ Screen1 As screen:
         Text: ="採点項目６"
         Width: =165
         X: =27
-        Y: =539
+        Y: =547
         ZIndex: =9
 
     Dropdown1 As dropdown:
@@ -129,7 +111,7 @@ Screen1 As screen:
     Label3 As label:
         Height: =70
         Size: =21
-        Text: ="採点者からのフィードバック"
+        Text: ="フィードバック・コメント"
         Width: =560
         X: =349
         Y: =178
@@ -137,21 +119,12 @@ Screen1 As screen:
 
     TextInput2 As text:
         Default: ="テキスト入力"
-        Height: =280
+        Height: =352
         Size: =21
         Width: =756
         X: =349
         Y: =248
         ZIndex: =17
-
-    Dropdown2 As dropdown:
-        Height: =76
-        Items: =["Aグループ","Bグループ","Cグループ","Dグループ","Eグループ"]
-        Size: =21
-        Width: =225
-        X: =147
-        Y: =34
-        ZIndex: =18
 
     Button1 As button:
         Height: =106
@@ -179,15 +152,6 @@ Screen1 As screen:
         Y: =36
         ZIndex: =20
 
-    Dropdown3 As dropdown:
-        Height: =65
-        Items: =["採点者１","採点者２"]
-        Size: =21
-        Width: =177
-        X: =333
-        Y: =547
-        ZIndex: =21
-
     Icon1 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
         OnSelect: =Navigate(Screen2, ScreenTransition)
@@ -210,7 +174,7 @@ Screen1 As screen:
         Text: |
             =mode2
         Width: =210
-        X: =414
-        Y: =77
+        X: =121
+        Y: =64
         ZIndex: =24
 
