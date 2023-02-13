@@ -1,30 +1,20 @@
 Screen2 As screen:
 
     Dropdown4 As dropdown:
-        Height: =70
+        Height: =66
         Items: =["A教室","B教室"]
         Size: =21
-        Width: =575
-        X: =261
-        Y: =171
+        Width: =446
+        X: =633
+        Y: =236
         ZIndex: =1
 
-    Label4 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =21
-        Text: ="教室・日時を選択"
-        Width: =560
-        X: =231
-        Y: =42
-        ZIndex: =2
-
     DatePicker2 As datepicker:
-        Height: =70
+        Height: =71
         Size: =24
-        Width: =575
-        X: =261
-        Y: =335
+        Width: =445
+        X: =633
+        Y: =131
         ZIndex: =3
 
     Icon1_1 As icon.ChevronLeft:
@@ -39,9 +29,63 @@ Screen2 As screen:
         OnSelect: |-
             =Navigate(Screen1, ScreenTransition,{mode1:Dropdown4.Selected.Value,mode2:DatePicker2.SelectedDate})
         Size: =24
-        Text: ="次へ"
+        Text: ="採点画面へ"
         Width: =280
-        X: =408
-        Y: =492
+        X: =813
+        Y: =528
         ZIndex: =5
+
+    Dropdown4_1 As dropdown:
+        Height: =70
+        Items: =["A先生","B先生"]
+        Size: =21
+        Width: =446
+        X: =633
+        Y: =337
+        ZIndex: =6
+
+    Dropdown4_2 As dropdown:
+        Height: =70
+        Items: =["Aグループ","Bグループ"]
+        Size: =21
+        Width: =446
+        X: =633
+        Y: =432
+        ZIndex: =7
+
+    Label11 As label:
+        Height: =70
+        Size: =21
+        Text: ="日付を選択"
+        Width: =560
+        X: =40
+        Y: =139
+        ZIndex: =8
+
+    Label11_1 As label:
+        Height: =70
+        Size: =21
+        Text: ="教室を選択"
+        Width: =560
+        X: =40
+        Y: =234
+        ZIndex: =9
+
+    Label11_2 As label:
+        Height: =70
+        Size: =21
+        Text: ="採点者を選択"
+        Width: =560
+        X: =40
+        Y: =337
+        ZIndex: =10
+
+    Label11_3 As label:
+        Height: =70
+        Size: =21
+        Text: ="採点するグループを選択"
+        Width: =560
+        X: =40
+        Y: =432
+        ZIndex: =11
 
