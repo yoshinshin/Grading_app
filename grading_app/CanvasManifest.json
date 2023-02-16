@@ -101,11 +101,11 @@
     "Id": "477e628c-1d95-471d-bb8d-b3ccf7bb4640",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
-    "Name": "アプリ仮４\u3000東海林",
+    "Name": "採点アプリ",
     "OriginatingVersion": "1.326"
   },
   "PublishInfo": {
-    "AppName": "アプリ仮４\u3000東海林",
+    "AppName": "採点アプリ",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",

@@ -11,10 +11,63 @@ Login_screen As screen:
 
     Manager_login_button As button:
         Height: =106
+        OnSelect: |-
+            =UpdateContext({pas_v:true})
         Size: =24
         Text: ="管理者画面"
         Width: =396
         X: =340
         Y: =402
         ZIndex: =2
+
+    password_group As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        password_button As button:
+            Height: =70
+            OnSelect: |-
+                =If(
+                    (password_textInput.Text = "password"),
+                    Navigate(Screen5),
+                    Notify("パスワードが違います",NotificationType.Error)
+                    )
+            RadiusBottomLeft: =0
+            RadiusTopLeft: =0
+            Size: =24
+            Text: =""
+            Visible: =pas_v
+            Width: |
+                =70
+            X: =652
+            Y: =291
+            ZIndex: =3
+
+        password_textInput As text:
+            Default: ="テキスト入力"
+            Height: =70
+            RadiusBottomLeft: |
+                =5
+            RadiusBottomRight: =0
+            RadiusTopRight: =0
+            Reset: =true
+            Size: =21
+            Visible: =pas_v
+            Width: =298
+            X: =354
+            Y: =291
+            ZIndex: =4
+
+        next_arrow As icon.ChevronRight:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            Visible: =pas_v
+            Width: =50
+            X: =662
+            Y: =301
+            ZIndex: =5
 

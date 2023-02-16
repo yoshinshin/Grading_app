@@ -1,0 +1,7 @@
+{
+  "DataEntityMetadataJson": {
+    "{AB0EDD5F-E182-6A41-A27A-85E13AE72E2F}": "{\"name\":\"{AB0EDD5F-E182-6A41-A27A-85E13AE72E2F}\",\"title\":\"user_table\",\"x-ms-permission\":\"read-write\",\"x-ms-capabilities\":{\"sortRestrictions\":{\"sortable\":true},\"filterRestrictions\":{\"filterable\":true},\"filterFunctionSupport\":[\"eq\",\"ne\",\"substringof\",\"contains\",\"startswith\",\"endswith\"]},\"schema\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"user_id\":{\"type\":\"string\",\"title\":\"user_id\",\"x-ms-sort\":\"none\",\"x-ms-capabilities\":{\"filterFunctions\":[\"eq\",\"ne\",\"substringof\",\"contains\",\"startswith\",\"endswith\"]},\"x-ms-permission\":\"read-write\"},\"user_name\":{\"type\":\"string\",\"title\":\"user_name\",\"x-ms-sort\":\"none\",\"x-ms-capabilities\":{\"filterFunctions\":[\"eq\",\"ne\",\"substringof\",\"contains\",\"startswith\",\"endswith\"]},\"x-ms-permission\":\"read-write\"}}}}}"
+  },
+  "EntityName": "user_table",
+  "TableName": "{AB0EDD5F-E182-6A41-A27A-85E13AE72E2F}"
+}

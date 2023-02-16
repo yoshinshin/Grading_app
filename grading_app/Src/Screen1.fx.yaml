@@ -141,10 +141,10 @@ Screen1 As screen:
                     採点項目５: Dropdown1_4.Selected.Value,
                     採点項目６: Dropdown1_5.Selected.Value,
                     採点者からのフィードバック: TextInput2,
-                    採点者氏名: TextInput1,
+                    採点者氏名: password_textInput,
                     id: Dropdown3
                 }
-            );Reset(Dropdown2);Reset(Dropdown1);Reset(Dropdown1_1);Reset(Dropdown1_2);Reset(Dropdown1_3);Reset(Dropdown1_4);Reset(Dropdown1_5);Reset(TextInput1);Reset(Dropdown3);
+            );Reset(Dropdown2);Reset(Dropdown1);Reset(Dropdown1_1);Reset(Dropdown1_2);Reset(Dropdown1_3);Reset(Dropdown1_4);Reset(Dropdown1_5);Reset(password_textInput);Reset(Dropdown3);
         Size: =24
         Text: ="入力完了"
         Width: =323
