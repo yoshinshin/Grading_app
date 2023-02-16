@@ -1,4 +1,6 @@
 Login_screen As screen:
+    OnVisible: |-
+        =UpdateContext({posv:false})
 
     Grader_login_button As button:
         Height: =106
@@ -39,7 +41,8 @@ Login_screen As screen:
             RadiusTopLeft: =0
             Size: =24
             Text: =""
-            Visible: =pas_v
+            Visible: |
+                =pas_v
             Width: |
                 =70
             X: =652
@@ -55,7 +58,8 @@ Login_screen As screen:
             RadiusTopRight: =0
             Reset: =true
             Size: =21
-            Visible: =pas_v
+            Visible: |
+                =pas_v
             Width: =298
             X: =354
             Y: =291
@@ -65,7 +69,8 @@ Login_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =50
             Icon: =Icon.ChevronRight
-            Visible: =pas_v
+            Visible: |
+                =pas_v
             Width: =50
             X: =662
             Y: =301
