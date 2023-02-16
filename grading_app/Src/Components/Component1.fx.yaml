@@ -1,0 +1,17 @@
+Component1 As CanvasComponent:
+    Fill: =RGBA(50, 86, 160, 1)
+    Height: =70
+    Width: =Max(App.Height,App.MinScreenHeight)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: =""
+        Width: =640
+        ZIndex: =1
+

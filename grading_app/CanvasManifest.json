@@ -117,8 +117,9 @@
   },
   "ScreenOrder": [
     "Login_screen",
+    "Modeselect_screen",
+    "View_screen",
     "Screen1",
-    "Screen5",
     "Screen2"
   ]
 }

@@ -1,9 +1,12 @@
 Login_screen As screen:
     OnVisible: |-
         =UpdateContext({posv:false})
+         And 
+         Set(view_name,"ログイン画面")
 
     Grader_login_button As button:
         Height: =106
+        OnSelect: =Navigate(Screen1)
         Size: =24
         Text: ="採点者画面"
         Width: =396

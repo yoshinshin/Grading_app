@@ -448,6 +448,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Login_screen.password_button.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Login_screen.password_button.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 63,
+                  "snippet": {
+                    "text": "Screen5"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Login_screen",
+                "type": "Login_screen.password_button"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Screen5"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Screen1"
                 }
               ],
@@ -1046,18 +1086,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen5"
+                  "fullyQualifiedName": "App.view_name"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen5",
+                  "fullyQualifiedName": "App.view_name",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "module": "Screen5",
-                "type": "Screen5"
+                "member": "view_name",
+                "module": "App",
+                "type": "App"
               }
             }
           ],
@@ -1065,10 +1106,10 @@
             "id": "issue"
           },
           "properties": {
-            "level": "Low"
+            "level": "Medium"
           },
-          "ruleId": "acc-ReadableScreenNameNeeded",
-          "ruleIndex": 4
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
         },
         {
           "locations": [
