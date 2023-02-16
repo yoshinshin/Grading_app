@@ -117,6 +117,7 @@
   },
   "ScreenOrder": [
     "Screen2",
-    "Screen1"
+    "Screen1",
+    "Login_screen"
   ]
 }

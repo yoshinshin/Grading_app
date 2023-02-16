@@ -1,0 +1,20 @@
+Login_screen As screen:
+
+    Grader_login_button As button:
+        Height: =106
+        Size: =24
+        Text: ="採点者画面"
+        Width: =396
+        X: =340
+        Y: =145
+        ZIndex: =1
+
+    Manager_login_button As button:
+        Height: =106
+        Size: =24
+        Text: ="管理者画面"
+        Width: =396
+        X: =340
+        Y: =402
+        ZIndex: =2
+

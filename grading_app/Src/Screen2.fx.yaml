@@ -19,7 +19,7 @@ Screen2 As screen:
 
     Icon1_1 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
-        OnSelect: =Navigate(Screen3, ScreenTransition)
+        OnSelect: =Navigate(Login_screen, ScreenTransition)
         X: =40
         Y: =40
         ZIndex: =4
