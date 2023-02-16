@@ -6,7 +6,7 @@ Login_screen As screen:
 
     Grader_login_button As button:
         Height: =106
-        OnSelect: =Navigate(Screen1)
+        OnSelect: =Navigate(grading_screen)
         Size: =24
         Text: ="採点者画面"
         Width: =396
@@ -37,7 +37,7 @@ Login_screen As screen:
             OnSelect: |-
                 =If(
                     (password_textInput.Text = "password"),
-                    Navigate(Screen5),
+                    Navigate(Modeselect_screen),
                     Notify("パスワードが違います",NotificationType.Error)
                     )
             RadiusBottomLeft: =0
