@@ -69,6 +69,20 @@
     "OverridableProperties": {},
     "Version": "2.3.1"
   },
+  "form": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/form",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "form",
+    "OverridableProperties": {},
+    "Version": "2.3.2"
+  },
   "group": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -120,6 +134,20 @@
     "Name": "label",
     "OverridableProperties": {},
     "Version": "2.5.1"
+  },
+  "rectangle": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/shapes/rectangle",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "rectangle",
+    "OverridableProperties": {},
+    "Version": "2.3.0"
   },
   "screen": {
     "CustomGroupControlTemplateName": "",
@@ -176,5 +204,19 @@
     "Name": "text",
     "OverridableProperties": {},
     "Version": "2.3.2"
+  },
+  "typedDataCard": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/card",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "typedDataCard",
+    "OverridableProperties": {},
+    "Version": "1.0.5"
   }
 }
