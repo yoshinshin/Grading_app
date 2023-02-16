@@ -119,7 +119,7 @@
     "Login_screen",
     "Modeselect_screen",
     "View_screen",
-    "grading_screen",
-    "Screen2"
+    "Grading_screen",
+    "GradingCertification_screen"
   ]
 }

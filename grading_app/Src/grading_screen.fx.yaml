@@ -1,4 +1,4 @@
-grading_screen As screen:
+Grading_screen As screen:
 
     Label2 As label:
         Height: =61
@@ -154,7 +154,7 @@ grading_screen As screen:
 
     Icon1 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
-        OnSelect: =Navigate(Screen2, ScreenTransition)
+        OnSelect: =Navigate(GradingCertification_screen, ScreenTransition)
         X: =40
         Y: =40
         ZIndex: =22

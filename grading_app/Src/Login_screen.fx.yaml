@@ -6,7 +6,7 @@ Login_screen As screen:
 
     Grader_login_button As button:
         Height: =106
-        OnSelect: =Navigate(grading_screen)
+        OnSelect: =Navigate(Grading_screen)
         Size: =24
         Text: ="採点者画面"
         Width: =396
@@ -72,6 +72,7 @@ Login_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =50
             Icon: =Icon.ChevronRight
+            OnSelect: =Select(password_button)
             Visible: |
                 =pas_v
             Width: =50

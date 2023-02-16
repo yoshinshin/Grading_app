@@ -1,7 +1,8 @@
 Modeselect_screen As screen:
 
-    Button4 As button:
+    ToViewScreen_button As button:
         Height: =70
+        OnSelect: =Navigate(View_screen)
         Size: =24
         Text: ="ボタン"
         Width: =432
