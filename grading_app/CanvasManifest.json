@@ -27,6 +27,7 @@
       "disablecdsfileandlargeimage": false,
       "disablecommandbar": false,
       "dynamicschema": false,
+      "enableactionenhancedcomponentproperties": false,
       "enableappembeddingux": false,
       "enablebarcodereaderfeature": false,
       "enablecomponentnamemaps": false,
@@ -41,7 +42,9 @@
       "enablerowscopeonetonexpand": false,
       "enablerpawarecomponentdependency": true,
       "enablerulespanel": false,
+      "enableruntimepolicies": false,
       "enablesaveloadcleardataonweb": false,
+      "enhancedcomponentfunctionproperty": false,
       "enhanceddelegation": true,
       "enhancedgalleryinitialization": true,
       "errorhandling": true,
@@ -113,10 +116,7 @@
     "UserLocale": "ja-JP"
   },
   "ScreenOrder": [
-    "Screen3",
     "Screen2",
-    "Screen1",
-    "Screen4",
-    "Screen5"
+    "Screen1"
   ]
 }
