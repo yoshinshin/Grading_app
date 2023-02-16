@@ -116,9 +116,9 @@
     "UserLocale": "ja-JP"
   },
   "ScreenOrder": [
-    "Screen2",
-    "Screen1",
     "Login_screen",
-    "Screen5"
+    "Screen1",
+    "Screen5",
+    "Screen2"
   ]
 }
