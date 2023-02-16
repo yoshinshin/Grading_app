@@ -38,18 +38,16 @@
     "Manager_login_button": 38,
     "Screen1": 3,
     "Screen2": 22,
+    "Screen5": 45,
     "Test_7F478737223C4B69": 2,
     "TextInput2": 11
   },
   "DoesTestStepsMetadataExist": false,
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/16/2023 06:54:25",
+  "HeaderLastSavedDateTimeUTC": "02/16/2023 07:02:28",
   "IsLegacyComponentAllowGlobalScopeCase": false,
-  "LocalConnectionIDReferences": {
-    "5bc1e4da-2e1e-4640-9b5c-37793f5c9fea": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/3f0a73a73cc544b99ae9e5b0eca94758\"",
-    "da4fc8d5-a2dc-4c0b-ac15-19f9a54efe7e": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/3f0a73a73cc544b99ae9e5b0eca94758\""
-  },
+  "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {},
   "LocalResourceRootPaths": {},
@@ -57,9 +55,7 @@
   "OrderComponentTemplate": {},
   "OrderDataSource": {
     "CustomGallerySample": 0,
-    "DropDownSample": 1,
-    "grading_table": 2,
-    "テーブル1": 3
+    "DropDownSample": 1
   },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
@@ -109,6 +105,7 @@
     "Manager_login_button": {},
     "Screen1": {},
     "Screen2": {},
+    "Screen5": {},
     "Test_7F478737223C4B69": {},
     "TextInput2": {}
   },
@@ -150,6 +147,7 @@
     "Manager_login_button": 19,
     "Screen1": 0,
     "Screen2": 0,
+    "Screen5": 0,
     "Test_7F478737223C4B69": 0,
     "TextInput2": 25
   },
@@ -172,7 +170,7 @@
       "text": 1
     },
     "DeserializationLoadTime": 2.0896536,
-    "ErrorCount": 10
+    "ErrorCount": 13
   },
   "WasLocalDatabaseReferencesEmpty": true
 }
