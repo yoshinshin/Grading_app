@@ -7,10 +7,12 @@
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "添付ファイル",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
       "{FilenameWithExtension}": "拡張子付きのファイル名",
       "{FullPath}": "完全パス ",
+      "{HasAttachments}": "添付ファイルあり",
       "{Identifier}": "識別子",
-      "{IsCheckedOut}": "チェックアウト済み",
       "{IsFolder}": "フォルダーである",
       "{Link}": "アイテムへのリンク",
       "{ModerationComment}": "このリスト アイテムのコンテンツの承認に関連付けられているコメント",
@@ -23,23 +25,24 @@
       "{VersionNumber}": "バージョン番号",
       "Author": "登録者",
       "Author#Claims": "登録者 Claims",
-      "CheckoutUser": "チェックアウト先",
-      "CheckoutUser#Claims": "チェックアウト先 Claims",
       "ComplianceAssetId": "コンプライアンス資産 ID",
       "Created": "登録日時",
+      "date": "date",
       "Editor": "更新者",
       "Editor#Claims": "更新者 Claims",
       "ID": "ID",
+      "id0": "id",
+      "is_final": "is_final",
       "Modified": "更新日時",
-      "OData__DisplayName": "秘密度",
-      "OData__ExtendedDescription": "説明",
+      "name": "name",
+      "room_name": "room_name",
       "Title": "タイトル"
     },
     "DatasetName": "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "ドキュメント",
+    "Name": "Venue_table",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

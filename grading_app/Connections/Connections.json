@@ -1,62 +1,4 @@
 {
-  "1def5fb1-570a-4bec-b049-ca4326241a24": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252F382bef29-62d8-44ee-9e8c-29e625912190,b%2521Pr6ygpe0akSPOpXLMOc-mS8-uqz2b41Dp6YEKj_Kpgv1nR1sRrn3SKtwYdTVwr8J,01T3C7MQDIFZLILQ7D55BLJNIXBN7MJU5D": {
-        "dataSources": {
-          "group_table": {
-            "tableName": "{B6EC6B70-C15B-4329-8C2E-6D450AD01DB2}"
-          }
-        }
-      },
-      "groups%252F382bef29-62d8-44ee-9e8c-29e625912190,b%2521Pr6ygpe0akSPOpXLMOc-mS8-uqz2b41Dp6YEKj_Kpgv1nR1sRrn3SKtwYdTVwr8J,01T3C7MQDZDMBXSFEZLRGZBSX2HQF2A5I3": {
-        "dataSources": {
-          "user_table": {
-            "tableName": "{AB0EDD5F-E182-6A41-A27A-85E13AE72E2F}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "group_table",
-      "user_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "1def5fb1-570a-4bec-b049-ca4326241a24"
-  },
-  "2989ab39-45bb-46e8-bc5a-5821b4071d9d": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "Excel Online (Business)",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/excelonlinebusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
-    },
-    "datasets": {
-      "groups%252F382bef29-62d8-44ee-9e8c-29e625912190,b%2521Pr6ygpe0akSPOpXLMOc-mS8-uqz2b41Dp6YEKj_Kpgv1nR1sRrn3SKtwYdTVwr8J,01T3C7MQGNNYRPIWQ5CREKCFOFF3422PT7": {
-        "dataSources": {
-          "grading_table": {
-            "tableName": "{C0F2FEC9-BDFF-0942-A79E-D5F792EEA7A0}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "grading_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "2989ab39-45bb-46e8-bc5a-5821b4071d9d"
-  },
   "d6d87367-50af-44df-bd8a-509b1596d09d": {
     "connectionParameters": {
       "sku": "Enterprise"
@@ -69,14 +11,26 @@
     "datasets": {
       "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp": {
         "dataSources": {
-          "ドキュメント": {
-            "tableName": "6c1d9df5-b946-48f7-ab70-61d4d5c2bf09"
+          "Grading_table": {
+            "tableName": "37e9ceac-372c-48d5-8d71-d10650066001"
+          },
+          "Group_table": {
+            "tableName": "c61d1983-2939-46cf-970c-23996e47dfdf"
+          },
+          "User_table": {
+            "tableName": "40a369a3-df28-4b2b-b2be-858760456151"
+          },
+          "Venue_table": {
+            "tableName": "8e1150b4-f1d2-464f-b730-f183ad21f086"
           }
         }
       }
     },
     "dataSources": [
-      "ドキュメント"
+      "Grading_table",
+      "Group_table",
+      "User_table",
+      "Venue_table"
     ],
     "dependencies": {},
     "dependents": [],

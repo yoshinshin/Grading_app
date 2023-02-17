@@ -19,21 +19,3 @@ Modeselect_screen As screen:
         Y: =242
         ZIndex: =2
 
-    Button4_2 As button:
-        Height: =70
-        Size: =24
-        Text: ="ボタン"
-        Width: =432
-        X: =344
-        Y: =381
-        ZIndex: =3
-
-    Button4_3 As button:
-        Height: =70
-        Size: =24
-        Text: ="ボタン"
-        Width: =432
-        X: =344
-        Y: =512
-        ZIndex: =4
-

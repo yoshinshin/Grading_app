@@ -69,19 +69,33 @@
     "OverridableProperties": {},
     "Version": "2.3.1"
   },
-  "form": {
+  "gallery": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/form",
+    "Id": "http://microsoft.com/appmagic/gallery",
     "IsComponentTemplate": false,
     "IsCustomGroupControlTemplate": false,
     "IsPcfControl": false,
     "IsPremiumPcfControl": false,
     "IsWidgetTemplate": true,
     "LastModifiedTimestamp": "0",
-    "Name": "form",
+    "Name": "gallery",
     "OverridableProperties": {},
-    "Version": "2.3.2"
+    "Version": "2.13.2"
+  },
+  "galleryTemplate": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/galleryTemplate",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "galleryTemplate",
+    "OverridableProperties": {},
+    "Version": "1.0"
   },
   "group": {
     "CustomGroupControlTemplateName": "",
@@ -204,19 +218,5 @@
     "Name": "text",
     "OverridableProperties": {},
     "Version": "2.3.2"
-  },
-  "typedDataCard": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/card",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": false,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": false,
-    "LastModifiedTimestamp": "0",
-    "Name": "typedDataCard",
-    "OverridableProperties": {},
-    "Version": "1.0.5"
   }
 }
