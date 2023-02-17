@@ -121,6 +121,7 @@
     "View_screen",
     "GradingCertification_screen",
     "Grading_screen",
-    "Screen2"
+    "Screen2",
+    "Group_management_screen"
   ]
 }
