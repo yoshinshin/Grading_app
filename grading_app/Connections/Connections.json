@@ -11,26 +11,14 @@
     "datasets": {
       "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp": {
         "dataSources": {
-          "Grading_table": {
-            "tableName": "37e9ceac-372c-48d5-8d71-d10650066001"
-          },
-          "Group_table": {
-            "tableName": "c61d1983-2939-46cf-970c-23996e47dfdf"
-          },
-          "User_table": {
-            "tableName": "40a369a3-df28-4b2b-b2be-858760456151"
-          },
-          "Venue_table": {
-            "tableName": "8e1150b4-f1d2-464f-b730-f183ad21f086"
+          "ドキュメント": {
+            "tableName": "6c1d9df5-b946-48f7-ab70-61d4d5c2bf09"
           }
         }
       }
     },
     "dataSources": [
-      "Grading_table",
-      "Group_table",
-      "User_table",
-      "Venue_table"
+      "ドキュメント"
     ],
     "dependencies": {},
     "dependents": [],
