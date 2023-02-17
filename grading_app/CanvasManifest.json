@@ -122,6 +122,7 @@
     "GradingCertification_screen",
     "Grading_screen",
     "Screen2",
-    "Group_management_screen"
+    "Group_management_screen",
+    "Grader_manegement_screen"
   ]
 }
