@@ -130,8 +130,8 @@ Grading_screen As screen:
         Height: =106
         OnSelect: |-
             =Patch(
-                テーブル1,
-                Defaults(テーブル1),
+                Grading_table,
+                Defaults(Grading_table),
                 {
                     グループ名: Dropdown2.Selected.Value,
                     採点項目１: Dropdown1.Selected.Value,
@@ -144,7 +144,7 @@ Grading_screen As screen:
                     採点者氏名: password_textInput,
                     id: Dropdown3
                 }
-            );Reset(Dropdown2);Reset(Dropdown1);Reset(Dropdown1_1);Reset(Dropdown1_2);Reset(Dropdown1_3);Reset(Dropdown1_4);Reset(Dropdown1_5);Reset(password_textInput);Reset(Dropdown3);
+            );Reset(Dropdown2);Reset(Dropdown1);Reset(Dropdown1_1);Reset(Dropdown1_2);Reset(Dropdown1_3);Reset(Dropdown1_4);Reset(Dropdown1_5);Reset(password_textInput);Reset(Dropdown3);Navigate(GradingCertification_screen, ScreenTransition)
         Size: =24
         Text: ="入力完了"
         Width: =323
