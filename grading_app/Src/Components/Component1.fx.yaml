@@ -1,17 +1,44 @@
 Component1 As CanvasComponent:
-    Fill: =RGBA(50, 86, 160, 1)
-    Height: =70
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
     Width: =Max(App.Height,App.MinScreenHeight)
     X: =0
     Y: =0
     ZIndex: =1
 
-    Label1 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =70
-        Size: =21
-        Text: =""
-        Width: =640
-        ZIndex: =1
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =4
+
+        Label1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =80
+            Size: =21
+            Text: =""
+            Width: =640
+            ZIndex: =1
+
+        Icon1_2 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =50
+            Icon: =Icon.ChevronLeft
+            Width: =50
+            Y: =15
+            ZIndex: =2
+
+        Label4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =21
+            Text: ="~~画面"
+            Width: =564
+            X: =76
+            ZIndex: =3
 
