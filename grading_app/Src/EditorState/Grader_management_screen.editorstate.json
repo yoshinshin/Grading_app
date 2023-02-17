@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "Grader_manegement_screen": {
+    "Grader_management_screen": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Fill",
@@ -20,7 +20,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Grader_manegement_screen",
+      "Name": "Grader_management_screen",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -69,5 +69,5 @@
       "Type": "ControlInfo"
     }
   },
-  "TopParentName": "Grader_manegement_screen"
+  "TopParentName": "Grader_management_screen"
 }
