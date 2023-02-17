@@ -1,7 +1,0 @@
-Group_management_screen As screen:
-
-    Rectangle1 As rectangle:
-        Height: =76
-        Width: =1136
-        ZIndex: =1
-

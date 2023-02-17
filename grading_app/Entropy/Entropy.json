@@ -1,6 +1,6 @@
 {
   "ComponentIndexes": {
-    "Component1": 7
+    "Component1": 5
   },
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
@@ -39,12 +39,10 @@
     "galleryTemplate1": 50,
     "grader": 38,
     "Grader_login_button": 27,
-    "Grader_management_screen": 65,
     "grader_val": 52,
     "Grading_screen": 5,
     "GradingCertification_screen": 66,
     "group": 37,
-    "Group_management_screen": 24,
     "group_val": 51,
     "Group1": 64,
     "Group2": 63,
@@ -75,7 +73,6 @@
     "password_button": 29,
     "password_group": 32,
     "password_textInput": 28,
-    "Rectangle1": 25,
     "room": 41,
     "room_val": 55,
     "Test_7F478737223C4B69": 2,
@@ -90,7 +87,7 @@
   "DoesTestStepsMetadataExist": true,
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/17/2023 13:03:57",
+  "HeaderLastSavedDateTimeUTC": "02/17/2023 13:06:52",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "d6d87367-50af-44df-bd8a-509b1596d09d": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/4662e99c03e142bba106866b86656cf5\""
@@ -156,12 +153,11 @@
   "OrderTemplate": {},
   "OrderXMLTemplate": {
     "button": 1,
-    "datepicker": 7,
+    "datepicker": 6,
     "dropdown": 3,
-    "gallery": 6,
+    "gallery": 5,
     "icon": 2,
     "label": 0,
-    "rectangle": 5,
     "text": 4
   },
   "OverridablePropertiesEntry": {
@@ -200,12 +196,10 @@
     "galleryTemplate1": {},
     "grader": {},
     "Grader_login_button": {},
-    "Grader_management_screen": {},
     "grader_val": {},
     "Grading_screen": {},
     "GradingCertification_screen": {},
     "group": {},
-    "Group_management_screen": {},
     "group_val": {},
     "Group1": {},
     "Group2": {},
@@ -236,7 +230,6 @@
     "password_button": {},
     "password_group": {},
     "password_textInput": {},
-    "Rectangle1": {},
     "room": {},
     "room_val": {},
     "Test_7F478737223C4B69": {},
@@ -285,12 +278,10 @@
     "galleryTemplate1": 25,
     "grader": 13,
     "Grader_login_button": 3,
-    "Grader_management_screen": 4,
     "grader_val": 28,
     "Grading_screen": 17,
     "GradingCertification_screen": 5,
     "group": 11,
-    "Group_management_screen": 36,
     "group_val": 26,
     "Group1": 12,
     "Group2": 27,
@@ -321,7 +312,6 @@
     "password_button": 6,
     "password_group": 5,
     "password_textInput": 4,
-    "Rectangle1": 68,
     "room": 16,
     "room_val": 31,
     "Test_7F478737223C4B69": 0,

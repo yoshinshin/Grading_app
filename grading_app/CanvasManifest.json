@@ -120,8 +120,6 @@
     "Modeselect_screen",
     "View_screen",
     "GradingCertification_screen",
-    "Grading_screen",
-    "Group_management_screen",
-    "Grader_management_screen"
+    "Grading_screen"
   ]
 }
