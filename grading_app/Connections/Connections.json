@@ -56,5 +56,30 @@
     "dependencies": {},
     "dependents": [],
     "id": "2989ab39-45bb-46e8-bc5a-5821b4071d9d"
+  },
+  "392a3aa6-8a6f-4d85-8fd2-ab87ca4e1ac7": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/juanq/gateway/greyhound/3000.150.11/1.0.1613.3116/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp": {
+        "dataSources": {
+          "ドキュメント": {
+            "tableName": "6c1d9df5-b946-48f7-ab70-61d4d5c2bf09"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "ドキュメント"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "392a3aa6-8a6f-4d85-8fd2-ab87ca4e1ac7"
   }
 }
