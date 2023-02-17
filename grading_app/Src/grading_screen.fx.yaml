@@ -134,13 +134,13 @@ Grading_screen As screen:
                 Defaults(Grading_table),
                 {
                     グループ名: Dropdown2.Selected.Value,
-                    採点項目１: Dropdown1.Selected.Value,
-                    採点項目２: Dropdown1_1.Selected.Value,
-                    採点項目３: Dropdown1_2.Selected.Value,
-                    採点項目４: Dropdown1_3.Selected.Value,
+                    evaluation_1: Dropdown1.Selected.Value,
+                    evaluation_2: Dropdown1_1.Selected.Value,
+                    evaluation_3: Dropdown1_2.Selected.Value,
+                    evaluation_4: Dropdown1_3.Selected.Value,
                     採点項目５: Dropdown1_4.Selected.Value,
                     採点項目６: Dropdown1_5.Selected.Value,
-                    採点者からのフィードバック: TextInput2,
+                    feedback: TextInput2,
                     採点者氏名: password_textInput,
                     id: Dropdown3
                 }
