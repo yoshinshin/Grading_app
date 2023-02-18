@@ -813,7 +813,14 @@
     "Dropdown2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         "ChevronFill",
         "ChevronHoverFill",
@@ -1081,7 +1088,14 @@
     "Dropdown2_1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         "ChevronFill",
         "ChevronHoverFill",
