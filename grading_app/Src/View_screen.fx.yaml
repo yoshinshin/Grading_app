@@ -22,7 +22,7 @@ View_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =LookUp(Group_table, id = ThisItem.group_id,name)
+                Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
                 Width: =112
                 X: =18
                 ZIndex: =1
@@ -32,7 +32,7 @@ View_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =LookUp(User_table,id = ThisItem.user_id,name)
+                Text: =LookUp(User_table,ID = ThisItem.user_id,name)
                 Width: =112
                 X: =130
                 ZIndex: =2
@@ -42,7 +42,7 @@ View_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =LookUp(Venue_table,id = ThisItem.venue_id,name)
+                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
                 Width: =112
                 X: =242
                 ZIndex: =3
@@ -52,7 +52,7 @@ View_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =Text(LookUp(Venue_table,id = ThisItem.venue_id,date),"mm/dd")
+                Text: =Text(LookUp(Venue_table,ID = ThisItem.venue_id,date),"mm/dd")
                 Width: =112
                 X: =354
                 ZIndex: =4
@@ -62,7 +62,7 @@ View_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =LookUp(Venue_table,id = ThisItem.venue_id,room_name)
+                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,room_name)
                 Width: =112
                 X: =466
                 ZIndex: =5

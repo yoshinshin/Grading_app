@@ -86,6 +86,7 @@ GradingCertification_screen As screen:
         Height: =70
         Size: =21
         Text: ="すべての項目を入力してください"
+        Visible: =false
         Width: =560
         X: =253
         Y: =528

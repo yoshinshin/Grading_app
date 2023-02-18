@@ -505,46 +505,6 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 2,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": "id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "View_screen",
-                "type": "View_screen.Gallery1.group_val"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "id"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "View_screen.Gallery1.group_val.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "View_screen.Gallery1.group_val.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 1,
                   "charOffset": 23,
                   "snippet": {
@@ -561,56 +521,16 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Number",
               "Text"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "View_screen.Gallery1.grader_val.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "View_screen.Gallery1.grader_val.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 18,
-                  "snippet": {
-                    "text": "id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "View_screen",
-                "type": "View_screen.Gallery1.grader_val"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "id"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
         },
         {
           "locations": [
@@ -642,56 +562,16 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Number",
               "Text"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "View_screen.Gallery1.vanue_val.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "View_screen.Gallery1.vanue_val.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 19,
-                  "snippet": {
-                    "text": "id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "View_screen",
-                "type": "View_screen.Gallery1.vanue_val"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "id"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
         },
         {
           "locations": [
@@ -723,56 +603,16 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Number",
               "Text"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "View_screen.Gallery1.date_val.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "View_screen.Gallery1.date_val.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 24,
-                  "snippet": {
-                    "text": "id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "View_screen",
-                "type": "View_screen.Gallery1.date_val"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "id"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
         },
         {
           "locations": [
@@ -804,56 +644,16 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Number",
               "Text"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "View_screen.Gallery1.room_val.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "View_screen.Gallery1.room_val.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 19,
-                  "snippet": {
-                    "text": "id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "View_screen",
-                "type": "View_screen.Gallery1.room_val"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "id"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
         },
         {
           "locations": [
@@ -885,13 +685,13 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Number",
               "Text"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 1
