@@ -24,8 +24,8 @@ List_screen As screen:
                 OnSelect: =Select(Parent)
                 Size: =16
                 Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
-                Width: =112
-                X: =18
+                Width: =106
+                X: =21
                 ZIndex: =1
 
             grader_val As label:
