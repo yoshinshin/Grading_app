@@ -1,21 +1,13 @@
 GradingCertification_screen As screen:
 
-    Dropdown4 As dropdown:
+    room_dropdown As dropdown:
         Height: =66
-        Items: =["A教室","B教室"]
+        Items: =Filter(Venue_table, date = date_dropdown.Selected.Result)
         Size: =21
         Width: =446
         X: =633
         Y: =236
         ZIndex: =1
-
-    DatePicker2 As datepicker:
-        Height: =71
-        Size: =24
-        Width: =445
-        X: =633
-        Y: =131
-        ZIndex: =3
 
     Icon1_1 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
@@ -27,7 +19,7 @@ GradingCertification_screen As screen:
     Button2 As button:
         Height: =70
         OnSelect: |-
-            =Navigate(Grading_screen, ScreenTransition,{mode1:Dropdown4.Selected.Value,mode2:DatePicker2.SelectedDate})
+            =Navigate(Grading_screen, ScreenTransition,{mode1:room_dropdown.Selected.Value,mode2:DatePicker2.SelectedDate})
         Size: =24
         Text: ="採点画面へ"
         Width: =280
@@ -35,18 +27,18 @@ GradingCertification_screen As screen:
         Y: =528
         ZIndex: =5
 
-    Dropdown4_1 As dropdown:
+    grader_dropdown As dropdown:
         Height: =70
-        Items: =["A先生","B先生"]
+        Items: =Filter(User_table,Not(name = "管理者"))
         Size: =21
         Width: =446
         X: =633
         Y: =337
         ZIndex: =6
 
-    Dropdown4_2 As dropdown:
+    group_dropdown As dropdown:
         Height: =70
-        Items: =["Aグループ","Bグループ"]
+        Items: =Group_table
         Size: =21
         Width: =446
         X: =633
@@ -89,7 +81,7 @@ GradingCertification_screen As screen:
         Y: =432
         ZIndex: =11
 
-    Label12 As label:
+    error_label As label:
         Color: =RGBA(255, 0, 0, 1)
         Height: =70
         Size: =21
@@ -98,4 +90,13 @@ GradingCertification_screen As screen:
         X: =253
         Y: =528
         ZIndex: =12
+
+    date_dropdown As dropdown:
+        Height: =66
+        Items: =Distinct(Venue_table,date).Result
+        Size: =21
+        Width: =446
+        X: =633
+        Y: =141
+        ZIndex: =13
 
