@@ -11,7 +11,7 @@ List_screen As screen:
         Y: =245
         ZIndex: =1
 
-        Group2 As group:
+        gal_group As group:
             Height: =5
             Width: =5
             X: =40
@@ -145,7 +145,7 @@ List_screen As screen:
         Y: =40
         ZIndex: =14
 
-    Group1 As group:
+    lab_group As group:
         Height: =5
         Width: =5
         X: =40
