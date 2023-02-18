@@ -1,5 +1,5 @@
 Grading_screen As screen:
-    OnVisible: =NewForm(Form1)
+    OnVisible: =NewForm(Form1);
 
     Form1 As form:
         DataSource: =Grading_table
@@ -13,7 +13,7 @@ Grading_screen As screen:
         ZIndex: =1
 
         evaluation_1_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_1")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_1"
             Default: =ThisItem.evaluation_1
@@ -154,7 +154,7 @@ Grading_screen As screen:
                 ZIndex: =4
 
         evaluation_2_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_2")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_2"
             Default: =ThisItem.evaluation_2
@@ -222,7 +222,7 @@ Grading_screen As screen:
                 ZIndex: =4
 
         evaluation_3_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_3")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_3"
             Default: =ThisItem.evaluation_3
@@ -290,7 +290,7 @@ Grading_screen As screen:
                 ZIndex: =4
 
         evaluation_4_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_4")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_4"
             Default: =ThisItem.evaluation_4
@@ -357,7 +357,7 @@ Grading_screen As screen:
                 ZIndex: =4
 
         evaluation_5_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_5")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_5"
             Default: =ThisItem.evaluation_5
@@ -424,7 +424,7 @@ Grading_screen As screen:
                 ZIndex: =4
 
         evaluation_6_DataCard2 As typedDataCard.allowedValuesNumberEditCard:
-            AllowedValues: =DataSourceInfo([@Grading_table], DataSourceInfo.AllowedValues, "evaluation_6")
+            AllowedValues: =[1,2,3,4,5]
             BorderStyle: =BorderStyle.Solid
             DataField: ="evaluation_6"
             Default: =ThisItem.evaluation_6
@@ -488,80 +488,6 @@ Grading_screen As screen:
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey20.Y
-                ZIndex: =4
-
-        id_DataCard2 As typedDataCard.textualEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Grading_id"
-            Default: =
-            DisplayMode: =View
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"Grading_id")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@Grading_table], DataSourceInfo.MaxLength, "Grading_id")
-            Required: =true
-            Update: =DataCardValue13.Text
-            Visible: =false
-            Width: =372
-            X: =2
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey13 As label:
-                AutoHeight: =true
-                Height: =48
-                Size: =21
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue13 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =70
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =21
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey13.Y + DataCardKey13.Height + 5
-                ZIndex: =2
-
-            ErrorMessage13 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =24
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue13.Y + DataCardValue13.Height
-                ZIndex: =3
-
-            StarVisible13 As label:
-                Align: =Align.Center
-                Height: =DataCardKey13.Height
-                Size: =21
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey13.Y
                 ZIndex: =4
 
         feedback_DataCard2 As typedDataCard.textualMultiLineEditCard:
@@ -786,7 +712,9 @@ Grading_screen As screen:
 
     Button3 As button:
         Height: =70
-        OnSelect: =SubmitForm(Form1)
+        OnSelect: |-
+            =SubmitForm(Form1);
+            Navigate(Success_screen)
         Size: =24
         Text: ="入力完了"
         Width: =280
