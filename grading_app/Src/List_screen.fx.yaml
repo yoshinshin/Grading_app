@@ -1,0 +1,300 @@
+List_screen As screen:
+
+    List_gallery As gallery.galleryVertical:
+        Height: =389
+        Items: =Grading_table
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(View_screen)
+        TemplateSize: =61
+        Width: =1079
+        X: =28
+        Y: =245
+        ZIndex: =1
+
+        Group2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =13
+
+            group_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
+                Width: =112
+                X: =18
+                ZIndex: =1
+
+            grader_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =LookUp(User_table,ID = ThisItem.user_id,name)
+                Width: =112
+                X: =130
+                ZIndex: =2
+
+            vanue_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
+                Width: =112
+                X: =242
+                ZIndex: =3
+
+            date_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =Text(LookUp(Venue_table,ID = ThisItem.venue_id,date),"mm/dd")
+                Width: =112
+                X: =354
+                ZIndex: =4
+
+            room_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,room_name)
+                Width: =112
+                X: =466
+                ZIndex: =5
+
+            eval1_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_1
+                Width: =71
+                X: =578
+                ZIndex: =6
+
+            eval2_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_2
+                Width: =71
+                X: =649
+                ZIndex: =7
+
+            eval3_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_3
+                Width: =71
+                X: =720
+                ZIndex: =8
+
+            eval4_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_4
+                Width: =71
+                X: =788
+                ZIndex: =9
+
+            eval5_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_5
+                Width: =72
+                X: =848
+                ZIndex: =10
+
+            eval6_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.evaluation_6
+                Width: =65
+                X: =920
+                ZIndex: =11
+
+            total_val As label:
+                Align: =Align.Center
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =(ThisItem.evaluation_1+ThisItem.evaluation_2+ThisItem.evaluation_3+ThisItem.evaluation_4+ThisItem.evaluation_5+ThisItem.evaluation_6)
+                Width: =71
+                X: =985
+                ZIndex: =12
+
+    Icon1_4 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Modeselect_screen, ScreenTransition)
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        group As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="グループ"
+            Width: =113
+            X: =50
+            Y: =187
+            ZIndex: =2
+
+        grader As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="採点者"
+            Width: =113
+            X: =163
+            Y: =187
+            ZIndex: =3
+
+        vanue As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="会場"
+            Width: =113
+            X: =276
+            Y: =187
+            ZIndex: =4
+
+        date As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="日付"
+            Width: =113
+            X: =389
+            Y: =187
+            ZIndex: =5
+
+        room As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="教室"
+            Width: =113
+            X: =502
+            Y: =187
+            ZIndex: =6
+
+        eval1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="評価1"
+            Width: =68
+            X: =615
+            Y: =187
+            ZIndex: =7
+
+        eval2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="評価2"
+            Width: =68
+            X: =683
+            Y: =187
+            ZIndex: =8
+
+        eval3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="評価3"
+            Width: =68
+            X: =751
+            Y: =187
+            ZIndex: =9
+
+        eval4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="評価4"
+            Width: =68
+            X: =819
+            Y: =187
+            ZIndex: =10
+
+        eval5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="評価5"
+            Width: =68
+            X: =887
+            Y: =187
+            ZIndex: =11
+
+        eval6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: |-
+                ="評価6
+                "
+            Width: =68
+            X: =955
+            Y: =187
+            ZIndex: =12
+
+        total As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =56
+            Size: =16
+            Text: ="合計"
+            Width: =68
+            X: =1023
+            Y: =187
+            ZIndex: =13
+

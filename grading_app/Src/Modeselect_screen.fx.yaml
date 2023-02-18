@@ -1,21 +1,28 @@
 Modeselect_screen As screen:
 
-    ToViewScreen_button As button:
-        Height: =70
-        OnSelect: =Navigate(View_screen)
+    "'To ListScreen_button' As button":
+        Height: =100
+        OnSelect: =Navigate(List_screen)
         Size: =24
-        Text: ="ボタン"
-        Width: =432
-        X: =344
-        Y: =124
+        Text: ="一覧画面"
+        Width: =400
+        X: =340
+        Y: =145
         ZIndex: =1
 
     Button4_1 As button:
-        Height: =70
+        Height: =100
         Size: =24
-        Text: ="ボタン"
-        Width: =432
-        X: =344
-        Y: =242
+        Text: ="集計画面"
+        Width: =400
+        X: =340
+        Y: =400
         ZIndex: =2
+
+    Icon1_5 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Login_screen, ScreenTransition)
+        X: =40
+        Y: =40
+        ZIndex: =3
 

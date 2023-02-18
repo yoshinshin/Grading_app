@@ -118,10 +118,12 @@
   "ScreenOrder": [
     "Login_screen",
     "Modeselect_screen",
-    "View_screen",
+    "List_screen",
     "GradingCertification_screen",
     "Grading_screen",
-    "Success_screen",
+    "View_screen",
+    "NewSuccess_screen",
+    "EditSuccess_screen",
     "another_Grading_screen"
   ]
 }

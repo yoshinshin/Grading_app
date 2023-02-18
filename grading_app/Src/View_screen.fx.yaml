@@ -1,292 +1,761 @@
 View_screen As screen:
+    OnVisible: |-
+        =ViewForm(Form1_1) & UpdateContext({edit:false})
 
-    Gallery1 As gallery.galleryVertical:
-        Height: =389
-        Items: =Grading_table
-        Layout: =Layout.Vertical
-        TemplateSize: =61
-        Width: =1079
-        X: =28
-        Y: =245
+    Form1_1 As form:
+        DataSource: =Grading_table
+        DefaultMode: =FormMode.View
+        Height: =484
+        Item: =List_gallery.Selected
+        NumberOfColumns: =6
+        SnapToColumns: =false
+        Width: =1097
+        X: =24
+        Y: =147
         ZIndex: =1
 
-        Group2 As group:
-            Height: =5
-            Width: =5
-            X: =40
-            Y: =40
-            ZIndex: =13
+        evaluation_1_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_1"
+            Default: =ThisItem.evaluation_1
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =36
+            Required: =true
+            Update: =DataCardValue15_1.Selected.Value
+            Width: =279
+            X: =0
+            Y: =1
+            ZIndex: =1
 
-            group_val As label:
-                Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
-                Width: =112
-                X: =18
+            DataCardKey15_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目1"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
                 ZIndex: =1
 
-            grader_val As label:
-                Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =LookUp(User_table,ID = ThisItem.user_id,name)
-                Width: =112
-                X: =130
+            DataCardValue15_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey15_1.Y + DataCardKey15_1.Height + 5
                 ZIndex: =2
 
-            vanue_val As label:
-                Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
-                Width: =112
-                X: =242
+            ErrorMessage15_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue15_1.Y + DataCardValue15_1.Height
                 ZIndex: =3
 
-            date_val As label:
+            StarVisible15_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =Text(LookUp(Venue_table,ID = ThisItem.venue_id,date),"mm/dd")
-                Width: =112
-                X: =354
+                Height: =DataCardKey15_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey15_1.Y
                 ZIndex: =4
 
-            room_val As label:
+        group_id_DataCard3_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Group_id"
+            Default: =ThisItem.group_id
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"Group_id")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =100
+            Required: =true
+            Update: =DataCardValue22_1.Text
+            Visible: =false
+            Width: =372
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey22_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue22_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey22_1.Y + DataCardKey22_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage21_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue22_1.Y + DataCardValue22_1.Height
+                ZIndex: =3
+
+            StarVisible21_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =LookUp(Venue_table,ID = ThisItem.venue_id,room_name)
-                Width: =112
-                X: =466
-                ZIndex: =5
+                Height: =DataCardKey22_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey22_1.Y
+                ZIndex: =4
 
-            eval1_val As label:
+        evaluation_2_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_2"
+            Default: =ThisItem.evaluation_2
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue16_1.Selected.Value
+            Width: =276
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey16_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目2"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue16_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey16_1.Y + DataCardKey16_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage16_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =60
+                Y: =105
+                ZIndex: =3
+
+            StarVisible16_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_1
-                Width: =71
-                X: =578
-                ZIndex: =6
+                Height: =DataCardKey16_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16_1.Y
+                ZIndex: =4
 
-            eval2_val As label:
+        evaluation_3_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_3"
+            Default: =ThisItem.evaluation_3
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue17_1.Selected.Value
+            Width: =279
+            X: =2
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey17_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目3"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue17_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey17_1.Y + DataCardKey17_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage17_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue17_1.Y + DataCardValue17_1.Height
+                ZIndex: =3
+
+            StarVisible17_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_2
-                Width: =71
-                X: =649
-                ZIndex: =7
+                Height: =DataCardKey17_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey17_1.Y
+                ZIndex: =4
 
-            eval3_val As label:
+        evaluation_4_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_4"
+            Default: =ThisItem.evaluation_4
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_4")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue18_1.Selected.Value
+            Width: =274
+            X: =3
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey18_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目4"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue18_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey18_1.Y + DataCardKey18_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage18_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue18_1.Y + DataCardValue18_1.Height
+                ZIndex: =3
+
+            StarVisible18_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_3
-                Width: =71
-                X: =720
-                ZIndex: =8
+                Height: =DataCardKey18_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey18_1.Y
+                ZIndex: =4
 
-            eval4_val As label:
+        evaluation_5_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_5"
+            Default: =ThisItem.evaluation_5
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_5")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue19_1.Selected.Value
+            Width: =276
+            X: =4
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey19_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目5"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue19_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey19_1.Y + DataCardKey19_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage19_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue19_1.Y + DataCardValue19_1.Height
+                ZIndex: =3
+
+            StarVisible19_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_4
-                Width: =71
-                X: =788
-                ZIndex: =9
+                Height: =DataCardKey19_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =10
+                ZIndex: =4
 
-            eval5_val As label:
+        evaluation_6_DataCard2_1 As typedDataCard.allowedValuesNumberEditCard:
+            AllowedValues: =[1,2,3,4,5]
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="evaluation_6"
+            Default: =ThisItem.evaluation_6
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_6")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue20_1.Selected.Value
+            Width: =276
+            X: =5
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey20_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点項目6"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue20_1 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Parent.AllowedValues
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey20_1.Y + DataCardKey20_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage20_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue20_1.Y + DataCardValue20_1.Height
+                ZIndex: =3
+
+            StarVisible20_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_5
-                Width: =72
-                X: =848
-                ZIndex: =10
+                Height: =DataCardKey20_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey20_1.Y
+                ZIndex: =4
 
-            eval6_val As label:
+        feedback_DataCard2_1 As typedDataCard.textualMultiLineEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="feedback"
+            Default: =ThisItem.feedback
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"feedback")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =247
+            Required: =false
+            Update: =DataCardValue14_1.Text
+            Width: =1104
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey14_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="フィードバック"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue14_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =176
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey14_1.Y + DataCardKey14_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage14_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
+                ZIndex: =3
+
+            StarVisible14_1 As label:
                 Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.evaluation_6
-                Width: =65
-                X: =920
-                ZIndex: =11
+                Height: =DataCardKey14_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey14_1.Y
+                ZIndex: =4
 
-            total_val As label:
-                Align: =Align.Center
-                Height: =49
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =(ThisItem.evaluation_1+ThisItem.evaluation_2+ThisItem.evaluation_3+ThisItem.evaluation_4+ThisItem.evaluation_5+ThisItem.evaluation_6)
-                Width: =71
-                X: =985
-                ZIndex: =12
-
-    Group1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =14
-
-        group As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="グループ"
-            Width: =113
-            X: =50
-            Y: =187
+        user_id_DataCard1_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="User_id"
+            Default: =ThisItem.user_id
+            DisplayMode: = View
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"User_id")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =89
+            MaxLength: =10
+            Required: =true
+            Update: =DataCardValue3_1.Text
+            Visible: =false
+            Width: =273
+            X: =0
+            Y: =0
             ZIndex: =2
 
-        grader As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="採点者"
-            Width: =113
-            X: =163
-            Y: =187
-            ZIndex: =3
+            DataCardKey3_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: ="採点者名"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
 
-        vanue As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="会場"
-            Width: =113
-            X: =276
-            Y: =187
-            ZIndex: =4
+            DataCardValue3_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3_1.Y + DataCardKey3_1.Height + 5
+                ZIndex: =2
 
-        date As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="日付"
-            Width: =113
-            X: =389
-            Y: =187
-            ZIndex: =5
+            ErrorMessage3_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3_1.Y + DataCardValue3_1.Height
+                ZIndex: =3
 
-        room As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="教室"
-            Width: =113
-            X: =502
-            Y: =187
-            ZIndex: =6
+            StarVisible3_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3_1.Y
+                ZIndex: =4
 
-        eval1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="評価1"
-            Width: =68
-            X: =615
-            Y: =187
-            ZIndex: =7
+        venue_id_DataCard1_1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="venue_id"
+            Default: =ThisItem.venue_id
+            DisplayMode: =View
+            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"venue_id")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =100
+            Required: =true
+            Update: =DataCardValue5_1.Text
+            Visible: =false
+            Width: =369
+            X: =4
+            Y: =0
+            ZIndex: =2
 
-        eval2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="評価2"
-            Width: =68
-            X: =683
-            Y: =187
-            ZIndex: =8
+            DataCardKey5_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
 
-        eval3 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="評価3"
-            Width: =68
-            X: =751
-            Y: =187
-            ZIndex: =9
+            DataCardValue5_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5_1.Y + DataCardKey5_1.Height + 5
+                ZIndex: =2
 
-        eval4 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="評価4"
-            Width: =68
-            X: =819
-            Y: =187
-            ZIndex: =10
+            ErrorMessage5_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5_1.Y + DataCardValue5_1.Height
+                ZIndex: =3
 
-        eval5 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="評価5"
-            Width: =68
-            X: =887
-            Y: =187
-            ZIndex: =11
+            StarVisible5_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_1.Y
+                ZIndex: =4
 
-        eval6 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: |-
-                ="評価6
-                "
-            Width: =68
-            X: =955
-            Y: =187
-            ZIndex: =12
+    Label5_6 As label:
+        Height: =57
+        Size: =20
+        Text: |
+            =LookUp(Group_table,ID = List_gallery.Selected.group_id,name)
+        Width: =177
+        X: =145
+        Y: =46
+        ZIndex: =3
 
-        total As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(39, 113, 194, 1)
-            Height: =56
-            Size: =16
-            Text: ="合計"
-            Width: =68
-            X: =1023
-            Y: =187
-            ZIndex: =13
+    Label5_7 As label:
+        Height: =50
+        Size: =20
+        Text: =LookUp(User_table,ID = List_gallery.Selected.user_id,name)
+        Width: =134
+        X: =349
+        Y: =49
+        ZIndex: =4
+
+    Label5_8 As label:
+        Height: =50
+        Size: =20
+        Text: =LookUp(Venue_table,ID = List_gallery.Selected.venue_id,name)
+        Width: =134
+        X: =496
+        Y: =49
+        ZIndex: =5
+
+    Icon1_6 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(List_screen, ScreenTransition)
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+    Button3_1 As button:
+        Height: =70
+        OnSelect: |-
+            =If(edit,SubmitForm(Form1_1) & ViewForm(Form1_1),EditForm(Form1_1)) &
+            UpdateContext({edit:!edit})
+        Size: =24
+        Text: =If(edit,"編集完了","編集モード")
+        Width: =280
+        X: =800
+        Y: =40
+        ZIndex: =7
 

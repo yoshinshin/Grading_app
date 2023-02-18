@@ -1,28 +1,27 @@
 Login_screen As screen:
     OnVisible: |-
-        =UpdateContext({posv:false})
-         And 
-         Set(view_name,"ログイン画面")
+        =UpdateContext({pas_v:false})&
+        Reset(password_textInput)
 
     Grader_login_button As button:
-        Height: =106
+        Height: =100
         OnSelect: =Navigate(GradingCertification_screen)
         Size: =24
         Text: ="採点者画面"
-        Width: =396
+        Width: =400
         X: =340
         Y: =145
         ZIndex: =1
 
     Manager_login_button As button:
-        Height: =106
+        Height: =100
         OnSelect: |-
             =UpdateContext({pas_v:true})
         Size: =24
         Text: ="管理者画面"
-        Width: =396
+        Width: =400
         X: =340
-        Y: =402
+        Y: =400
         ZIndex: =2
 
     password_group As group:
@@ -53,7 +52,7 @@ Login_screen As screen:
             ZIndex: =3
 
         password_textInput As text:
-            Default: ="テキスト入力"
+            Default: =""
             Height: =70
             RadiusBottomLeft: |
                 =5

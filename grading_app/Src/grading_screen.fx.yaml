@@ -87,7 +87,7 @@ Grading_screen As screen:
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"Group_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@Grading_table], DataSourceInfo.MaxLength, "Group_id")
+            MaxLength: =100
             Required: =true
             Update: =DataCardValue22.Text
             Visible: =false
@@ -570,7 +570,7 @@ Grading_screen As screen:
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"User_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =89
-            MaxLength: =DataSourceInfo([@Grading_table], DataSourceInfo.MaxLength, "User_id")
+            MaxLength: =10
             Required: =true
             Update: =DataCardValue3.Text
             Visible: =false
@@ -644,7 +644,7 @@ Grading_screen As screen:
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"venue_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@Grading_table], DataSourceInfo.MaxLength, "venue_id")
+            MaxLength: =100
             Required: =true
             Update: =DataCardValue5.Text
             Visible: =false
@@ -714,11 +714,11 @@ Grading_screen As screen:
         Height: =70
         OnSelect: |-
             =SubmitForm(Form1);
-            Navigate(Success_screen)
+            Navigate(NewSuccess_screen)
         Size: =24
         Text: ="入力完了"
         Width: =280
-        X: =805
+        X: =800
         Y: =40
         ZIndex: =2
 
@@ -753,7 +753,7 @@ Grading_screen As screen:
     Icon1_3 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
         OnSelect: =Navigate(GradingCertification_screen, ScreenTransition)
-        X: =24
-        Y: =43
+        X: =40
+        Y: =40
         ZIndex: =6
 

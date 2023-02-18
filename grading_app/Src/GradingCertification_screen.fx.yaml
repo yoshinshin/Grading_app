@@ -29,7 +29,7 @@ GradingCertification_screen As screen:
 
     grader_dropdown As dropdown:
         Height: =70
-        Items: =Filter(User_table,Not(name = "管理者"))
+        Items: =Filter(User_table,!(name = "管理者"))
         Size: =21
         Width: =446
         X: =633
