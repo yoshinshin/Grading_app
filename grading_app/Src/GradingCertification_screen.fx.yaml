@@ -19,7 +19,7 @@ GradingCertification_screen As screen:
     Button2 As button:
         Height: =70
         OnSelect: |-
-            =Navigate(Grading_screen, ScreenTransition,{mode1:room_dropdown.Selected.Value,mode2:DatePicker2.SelectedDate})
+            =Navigate(Grading_screen, ScreenTransition,{venue_id:room_dropdown.Selected.ID,grader_id:grader_dropdown.Selected.ID,group_id:group_dropdown.Selected.ID})
         Size: =24
         Text: ="採点画面へ"
         Width: =280

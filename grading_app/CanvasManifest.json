@@ -120,6 +120,7 @@
     "Modeselect_screen",
     "View_screen",
     "GradingCertification_screen",
-    "Grading_screen"
+    "Grading_screen",
+    "another_Grading_screen"
   ]
 }
