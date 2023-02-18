@@ -298,3 +298,74 @@ List_screen As screen:
             Y: =187
             ZIndex: =13
 
+    Rectangle1 As rectangle:
+        Fill: =RGBA(136, 160, 209, 1)
+        Height: =69
+        Width: =1041
+        X: =50
+        Y: =117
+        ZIndex: =15
+
+    Label6 As label:
+        Height: =26
+        Size: =21
+        Text: ="絞り込み"
+        Width: =291
+        X: =74
+        Y: =117
+        ZIndex: =16
+
+    Label7 As label:
+        Height: =26
+        Size: =21
+        Text: ="並び替え"
+        Width: =344
+        X: =443
+        Y: =117
+        ZIndex: =17
+
+    Button6 As button:
+        Height: =48
+        Size: =24
+        Text: ="検索"
+        Width: =213
+        X: =864
+        Y: =132
+        ZIndex: =18
+
+    Dropdown2 As dropdown:
+        Height: =33
+        Items: =DropDownSample
+        Size: =21
+        Width: =168
+        X: =74
+        Y: =147
+        ZIndex: =19
+
+    Dropdown2_1 As dropdown:
+        Height: =33
+        Items: =DropDownSample
+        Size: =21
+        Width: =168
+        X: =258
+        Y: =148
+        ZIndex: =20
+
+    Dropdown2_2 As dropdown:
+        Height: =33
+        Items: =DropDownSample
+        Size: =21
+        Width: =168
+        X: =463
+        Y: =148
+        ZIndex: =21
+
+    Dropdown2_3 As dropdown:
+        Height: =33
+        Items: =DropDownSample
+        Size: =21
+        Width: =168
+        X: =667
+        Y: =148
+        ZIndex: =22
+
