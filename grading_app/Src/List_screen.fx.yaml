@@ -353,7 +353,7 @@ List_screen As screen:
 
     Dropdown2_2 As dropdown:
         Height: =33
-        Items: =["100","200","300"]
+        Items: =DropDownSample
         Size: =21
         Width: =168
         X: =463
