@@ -335,7 +335,6 @@ List_screen As screen:
 
     Dropdown2 As dropdown:
         Height: =33
-        Items: =["Aさん","Bさん","Cさん"]
         Size: =21
         Width: =168
         X: =74
