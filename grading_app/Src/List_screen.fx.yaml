@@ -335,6 +335,7 @@ List_screen As screen:
 
     Dropdown2 As dropdown:
         Height: =33
+        Items: =Distinct(Grading_table,ID)
         Size: =21
         Width: =168
         X: =74
@@ -343,7 +344,7 @@ List_screen As screen:
 
     Dropdown2_1 As dropdown:
         Height: =33
-        Items: =["02/17","02/18"]
+        Items: =Distinct(Grading_table,venue_id)
         Size: =21
         Width: =168
         X: =258
