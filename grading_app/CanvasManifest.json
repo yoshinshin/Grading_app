@@ -123,7 +123,6 @@
     "Grading_screen",
     "View_screen",
     "NewSuccess_screen",
-    "EditSuccess_screen",
-    "another_Grading_screen"
+    "EditSuccess_screen"
   ]
 }
