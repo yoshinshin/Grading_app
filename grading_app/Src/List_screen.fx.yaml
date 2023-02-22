@@ -344,7 +344,7 @@ List_screen As screen:
 
     Dropdown2_1 As dropdown:
         Height: =33
-        Items: =Distinct(Grading_table,venue_id)
+        Items: =Filter(Distinct(Grading_table, venue_id), Result = Dropdown2.Selected.Result)
         Size: =21
         Width: =168
         X: =258

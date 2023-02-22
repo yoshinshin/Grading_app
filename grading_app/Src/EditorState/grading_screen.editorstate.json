@@ -9197,7 +9197,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "evaluation_1_DataCard2",
-      "ParentIndex": 0,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14509,7 +14509,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "user_id_DataCard1",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14682,7 +14682,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "venue_id_DataCard1",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
