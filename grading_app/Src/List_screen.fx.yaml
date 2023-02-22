@@ -353,7 +353,7 @@ List_screen As screen:
 
     Dropdown2_2 As dropdown:
         Height: =33
-        Items: =ClearCollect(Grading_table,SortByColumns(Grading_table,"evaluation_1")
+        Items: =Filter(Grading_table,Button6.Text in group)
         Size: =21
         Width: =168
         X: =463
