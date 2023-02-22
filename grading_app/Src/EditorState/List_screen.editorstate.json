@@ -1363,7 +1363,14 @@
     "Dropdown2_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         "ChevronFill",
         "ChevronHoverFill",
@@ -1420,7 +1427,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"ComplianceAssetId\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
