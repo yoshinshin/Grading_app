@@ -877,7 +877,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Result\"}",
+          "NameMap": "{\"Value\":\"ComplianceAssetId\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
