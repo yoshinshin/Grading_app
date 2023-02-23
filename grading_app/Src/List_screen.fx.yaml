@@ -2,7 +2,7 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: =Grading_table
+        Items: =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(View_screen)
         TemplateSize: =61
@@ -73,7 +73,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_1
+                Text: =ThisItem.Result
                 Width: =71
                 X: =578
                 ZIndex: =6
@@ -83,7 +83,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_2
+                Text: =ThisItem.Result
                 Width: =71
                 X: =649
                 ZIndex: =7
@@ -93,7 +93,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_3
+                Text: =ThisItem.Result
                 Width: =71
                 X: =720
                 ZIndex: =8
@@ -103,7 +103,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_4
+                Text: =ThisItem.Result
                 Width: =71
                 X: =788
                 ZIndex: =9
@@ -113,7 +113,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_5
+                Text: =ThisItem.Result
                 Width: =72
                 X: =848
                 ZIndex: =10
@@ -123,7 +123,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_6
+                Text: =ThisItem.Result
                 Width: =65
                 X: =920
                 ZIndex: =11
