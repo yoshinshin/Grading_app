@@ -2,7 +2,9 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: =Grading_table
+        Items: |-
+            =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)
+             && venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(View_screen)
         TemplateSize: =61
@@ -73,7 +75,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.タイトル
+                Text: =ThisItem.evaluation_1
                 Width: =71
                 X: =578
                 ZIndex: =6
@@ -83,7 +85,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.user_id
+                Text: =ThisItem.evaluation_2
                 Width: =71
                 X: =649
                 ZIndex: =7
@@ -93,7 +95,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.group_id
+                Text: =ThisItem.evaluation_3
                 Width: =71
                 X: =720
                 ZIndex: =8
@@ -103,7 +105,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.venue_id
+                Text: =ThisItem.evaluation_4
                 Width: =71
                 X: =788
                 ZIndex: =9
@@ -113,7 +115,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_1
+                Text: =ThisItem.evaluation_5
                 Width: =72
                 X: =848
                 ZIndex: =10
@@ -123,7 +125,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_2
+                Text: =ThisItem.evaluation_6
                 Width: =65
                 X: =920
                 ZIndex: =11
@@ -335,7 +337,7 @@ List_screen As screen:
 
     Dropdown2 As dropdown:
         Height: =33
-        Items: =Filter(Grading_table,user_id=LookUp(User_table,name))
+        Items: =Distinct(User_table,name)
         Size: =21
         Width: =168
         X: =74
@@ -344,7 +346,7 @@ List_screen As screen:
 
     Dropdown2_1 As dropdown:
         Height: =33
-        Items: =Filter(Distinct(Grading_table, venue_id), Result = Dropdown2.Selected.Result)
+        Items: =Distinct(Venue_table,name)
         Size: =21
         Width: =168
         X: =258
