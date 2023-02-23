@@ -335,7 +335,7 @@ List_screen As screen:
 
     Dropdown2 As dropdown:
         Height: =33
-        Items: =Distinct(Grading_table,ID)
+        Items: =Distinct(User_table,name)
         Size: =21
         Width: =168
         X: =74
