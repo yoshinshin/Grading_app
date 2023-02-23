@@ -364,7 +364,7 @@ List_screen As screen:
 
     Dropdown2_3 As dropdown:
         Height: =33
-        Items: =DropDownSample
+        Items: =collect(Grading_table,Sort(Grading_table,Dropdown2_2.SelectedText[ascending]))
         Size: =21
         Width: =168
         X: =667
