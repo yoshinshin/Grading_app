@@ -22,7 +22,6 @@
       "consistentreturnschemafortabularfunctions": false,
       "copyandmerge": true,
       "datatablev2control": true,
-      "dataverseactionsenabled": false,
       "delaycontrolrendering": true,
       "delayloadscreens": true,
       "disablecdsfileandlargeimage": false,
