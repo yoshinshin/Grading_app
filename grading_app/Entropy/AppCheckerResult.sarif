@@ -54,40 +54,35 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items"
+                  "fullyQualifiedName": "List_screen.Dropdown2_2.Items"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items",
+                  "fullyQualifiedName": "List_screen.Dropdown2_2.Items",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 33,
+                  "charOffset": 0,
                   "snippet": {
-                    "text": "["
+                    "text": ""
                   }
                 }
               },
               "properties": {
                 "member": "Items",
                 "module": "List_screen",
-                "type": "List_screen.Dropdown2_3"
+                "type": "List_screen.Dropdown2_2"
               }
             }
           ],
           "message": {
-            "arguments": [
-              "BracketOpen",
-              "ParenClose"
-            ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
+          "ruleId": "app-WarnNoUsableFields",
           "ruleIndex": 1
         },
         {
@@ -104,10 +99,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 33,
+                  "charLength": 7,
+                  "charOffset": 66,
                   "snippet": {
-                    "text": "["
+                    "text": ".Result"
                   }
                 }
               },
@@ -119,12 +114,55 @@
             }
           ],
           "message": {
+            "arguments": [
+              "Result"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrBadToken",
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 57,
+                  "charOffset": 27,
+                  "snippet": {
+                    "text": "Sort(Grading_table,Dropdown2_2.Selected.Result,Ascending)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "List_screen",
+                "type": "List_screen.Dropdown2_3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sort"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -141,10 +179,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
+                  "charLength": 13,
                   "charOffset": 13,
                   "snippet": {
-                    "text": "("
+                    "text": "Grading_table"
                   }
                 }
               },
@@ -156,15 +194,12 @@
             }
           ],
           "message": {
-            "arguments": [
-              "SortByColumns"
-            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleId": "app-ErrInvalidDataSourceForFunction",
           "ruleIndex": 3
         },
         {
@@ -181,10 +216,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 5,
-                  "charOffset": 28,
+                  "charLength": 85,
+                  "charOffset": 0,
                   "snippet": {
-                    "text": "eval1"
+                    "text": "ClearCollect(Grading_table,Sort(Grading_table,Dropdown2_2.Selected.Result,Ascending))"
                   }
                 }
               },
@@ -196,16 +231,12 @@
             }
           ],
           "message": {
-            "arguments": [
-              "Text",
-              "Control"
-            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleId": "app-ErrBehaviorPropertyExpected",
           "ruleIndex": 4
         },
         {
@@ -1862,35 +1893,15 @@
               }
             },
             {
-              "id": "app-ErrExpectedFound-Ex-Fnd",
+              "id": "app-WarnNoUsableFields",
               "messageStrings": {
                 "issue": {
-                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
+                  "text": "Warning: The columns produced by this rule are all nested tables and/or records, however the property expects at least some columns of simple values (such as text, or numbers)."
                 }
               },
               "properties": {
                 "componentType": "app",
-                "howToFix": [
-                  "Remove or replace the unexpected characters with an expected character."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrBadToken",
-              "messageStrings": {
-                "issue": {
-                  "text": "Unexpected characters. Characters are used in the formula in an unexpected way."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or replace the unexpected characters."
-                ],
-                "level": "High",
+                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
@@ -1910,14 +1921,31 @@
               }
             },
             {
-              "id": "app-ErrBadType-ExpectedType-ProvidedType",
+              "id": "app-ErrInvalidDataSourceForFunction",
               "messageStrings": {
                 "issue": {
-                  "text": "Invalid argument type ({1}). Expecting a {0} value instead."
+                  "text": "The specified data source cannot be used with this function."
                 }
               },
               "properties": {
                 "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBehaviorPropertyExpected",
+              "messageStrings": {
+                "issue": {
+                  "text": "Behavior function in a non-behavior property. You can't use this property to change values elsewhere in the app."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Move the behavior function to a behavior-based property."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
