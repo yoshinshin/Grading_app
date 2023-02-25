@@ -63,10 +63,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 19,
+                  "charLength": 13,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "select(eval1,eval2)"
+                    "text": "Onselect(\"1\")"
                   }
                 }
               },
@@ -79,7 +79,7 @@
           ],
           "message": {
             "arguments": [
-              "select"
+              "Onselect"
             ],
             "id": "issue"
           },
@@ -103,8 +103,48 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 4,
+                  "charOffset": 46,
+                  "snippet": {
+                    "text": "eval"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "List_screen",
+                "type": "List_screen.Dropdown2_3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "eval"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "List_screen.Dropdown2_3.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 7,
-                  "charOffset": 66,
+                  "charOffset": 71,
                   "snippet": {
                     "text": ".Result"
                   }
@@ -143,10 +183,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 57,
-                  "charOffset": 27,
+                  "charLength": 1,
+                  "charOffset": 50,
                   "snippet": {
-                    "text": "Sort(Grading_table,Dropdown2_2.Selected.Result,Ascending)"
+                    "text": "="
                   }
                 }
               },
@@ -159,14 +199,15 @@
           ],
           "message": {
             "arguments": [
-              "Sort"
+              "Error",
+              "Error"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 2
         },
         {
@@ -220,10 +261,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 85,
+                  "charLength": 90,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "ClearCollect(Grading_table,Sort(Grading_table,Dropdown2_2.Selected.Result,Ascending))"
+                    "text": "ClearCollect(Grading_table,Sort(Grading_table,eval=Dropdown2_2.Selected.Result,Ascending))"
                   }
                 }
               },
@@ -1911,14 +1952,18 @@
               }
             },
             {
-              "id": "app-ErrInvalidArgs-Func",
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
               "messageStrings": {
                 "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
                 }
               },
               "properties": {
                 "componentType": "app",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""

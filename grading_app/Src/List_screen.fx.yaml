@@ -7,7 +7,7 @@ List_screen As screen:
             =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)
              && venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
         Layout: =Layout.Vertical
-        OnSelect: =Navigate(View_screen)
+        OnSelect: =
         TemplateSize: =61
         Width: =1079
         X: =28
@@ -356,7 +356,8 @@ List_screen As screen:
 
     Dropdown2_2 As dropdown:
         Height: =33
-        Items: =select(eval1,eval2)
+        Items: =Onselect("1")
+        OnSelect: =
         Size: =21
         Width: =168
         X: =463
@@ -365,7 +366,7 @@ List_screen As screen:
 
     Dropdown2_3 As dropdown:
         Height: =33
-        Items: =ClearCollect(Grading_table,Sort(Grading_table,Dropdown2_2.Selected.Result,Ascending))
+        Items: =ClearCollect(Grading_table,Sort(Grading_table,eval=Dropdown2_2.Selected.Result,Ascending))
         Size: =21
         Width: =168
         X: =667
