@@ -66,7 +66,7 @@
                   "charLength": 13,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "Onselect(\"1\")"
+                    "text": "OnSelect(\"1\")"
                   }
                 }
               },
@@ -79,7 +79,7 @@
           ],
           "message": {
             "arguments": [
-              "Onselect"
+              "OnSelect"
             ],
             "id": "issue"
           },
