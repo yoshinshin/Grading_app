@@ -63,9 +63,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 19,
                   "charOffset": 0,
                   "snippet": {
-                    "text": ""
+                    "text": "select(eval1,eval2)"
                   }
                 }
               },
@@ -77,12 +78,15 @@
             }
           ],
           "message": {
+            "arguments": [
+              "select"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "app-WarnNoUsableFields",
+          "ruleId": "app-ErrUnknownFunction",
           "ruleIndex": 1
         },
         {
@@ -1893,15 +1897,15 @@
               }
             },
             {
-              "id": "app-WarnNoUsableFields",
+              "id": "app-ErrUnknownFunction",
               "messageStrings": {
                 "issue": {
-                  "text": "Warning: The columns produced by this rule are all nested tables and/or records, however the property expects at least some columns of simple values (such as text, or numbers)."
+                  "text": "'{0}' is an unknown or unsupported function."
                 }
               },
               "properties": {
                 "componentType": "app",
-                "level": "Medium",
+                "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
