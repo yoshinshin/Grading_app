@@ -12,6 +12,7 @@ Modeselect_screen As screen:
 
     Button4_1 As button:
         Height: =100
+        OnSelect: =Navigate(ScoreSummaryTable)
         Size: =24
         Text: ="集計画面"
         Width: =400
