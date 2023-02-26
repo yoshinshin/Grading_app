@@ -4,9 +4,19 @@ List_screen As screen:
     List_gallery As gallery.galleryVertical:
         Height: =389
         Items: |
-            =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
-            If(Dropdown2_2.SelectedText="評価1"&& Dropdown2_3.SelectedText="昇順
-            ",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending))
+            =  If(
+                Dropdown2_2.Selected.Value="評価1"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending),
+                If(Dropdown2_2.Selected.Value="評価1"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Descending),
+                If(Dropdown2_2.Selected.Value="評価2"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Ascending),
+                If(Dropdown2_2.Selected.Value="評価2"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Descending),
+                 If(Dropdown2_2.Selected.Value="評価3"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Ascending),
+                 If(Dropdown2_2.Selected.Value="評価3"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Descending),
+                 If(Dropdown2_2.Selected.Value="評価4"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Ascending),
+                If(Dropdown2_2.Selected.Value="評価4"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Descending),
+                If(Dropdown2_2.Selected.Value="評価5"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Ascending),
+                If(Dropdown2_2.Selected.Value="評価5"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Descending),
+                If(Dropdown2_2.Selected.Value="評価6"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Ascending),
+                If(Dropdown2_2.Selected.Value="評価6"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Descending)))))))))))))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
@@ -330,6 +340,7 @@ List_screen As screen:
 
     Button6 As button:
         Height: =48
+        OnSelect: =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
         Size: =24
         Text: ="検索"
         Width: =213
