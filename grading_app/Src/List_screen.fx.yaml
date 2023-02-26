@@ -356,7 +356,7 @@ List_screen As screen:
 
     Dropdown2_2 As dropdown:
         Height: =33
-        Items: =[eval1,eval2,eval3,eval4,eval5,eval6]
+        Items: =[eval1,eval2,eval3,eval4,eval5,]
         OnSelect: =
         Size: =21
         Width: =168
