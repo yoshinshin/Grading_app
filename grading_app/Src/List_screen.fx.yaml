@@ -3,9 +3,9 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: |-
-            =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)
-             && venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
+        Items: |
+            =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID));If(Dropdown2_2.SelectedText="評価1"&& Dropdown2_3.SelectedText="昇順
+            ",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
