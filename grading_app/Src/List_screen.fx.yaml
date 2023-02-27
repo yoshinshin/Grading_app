@@ -21,7 +21,7 @@ List_screen As screen:
         OnSelect: =
         TemplateSize: =61
         Width: =1079
-        X: =28
+        X: =37
         Y: =245
         ZIndex: =1
 
