@@ -1,22 +1,24 @@
 List_screen As screen:
     Fill: =Whit
+    OnVisible: |-
+        =UpdateContext({eval_table: Table({col1:"評価1",col2:"evaluation1"})})
 
     List_gallery As gallery.galleryVertical:
         Height: =389
         Items: |
             =  If(
-                Dropdown2_2.Selected.Value="評価1"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending),
-                If(Dropdown2_2.Selected.Value="評価1"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Descending),
-                If(Dropdown2_2.Selected.Value="評価2"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Ascending),
-                If(Dropdown2_2.Selected.Value="評価2"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Descending),
-                 If(Dropdown2_2.Selected.Value="評価3"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Ascending),
-                 If(Dropdown2_2.Selected.Value="評価3"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Descending),
-                 If(Dropdown2_2.Selected.Value="評価4"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Ascending),
-                If(Dropdown2_2.Selected.Value="評価4"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Descending),
-                If(Dropdown2_2.Selected.Value="評価5"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Ascending),
-                If(Dropdown2_2.Selected.Value="評価5"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Descending),
-                If(Dropdown2_2.Selected.Value="評価6"&& Dropdown2_3.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Ascending),
-                If(Dropdown2_2.Selected.Value="評価6"&& Dropdown2_3.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Descending)))))))))))))
+                Sort_dropdown_1.Selected.Value="評価1"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending),
+                If(Sort_dropdown_1.Selected.Value="評価1"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Descending),
+                If(Sort_dropdown_1.Selected.Value="評価2"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Ascending),
+                If(Sort_dropdown_1.Selected.Value="評価2"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Descending),
+                 If(Sort_dropdown_1.Selected.Value="評価3"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Ascending),
+                 If(Sort_dropdown_1.Selected.Value="評価3"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Descending),
+                 If(Sort_dropdown_1.Selected.Value="評価4"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Ascending),
+                If(Sort_dropdown_1.Selected.Value="評価4"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Descending),
+                If(Sort_dropdown_1.Selected.Value="評価5"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Ascending),
+                If(Sort_dropdown_1.Selected.Value="評価5"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Descending),
+                If(Sort_dropdown_1.Selected.Value="評価6"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Ascending),
+                If(Sort_dropdown_1.Selected.Value="評価6"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Descending)))))))))))))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
@@ -340,7 +342,7 @@ List_screen As screen:
 
     Button6 As button:
         Height: =48
-        OnSelect: =Filter(Grading_table,user_id=LookUp(User_table,name=Dropdown2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Dropdown2_1.Selected.Result,ID))
+        OnSelect: =Filter(Grading_table,user_id=LookUp(User_table,name=Condition_dropdown_1.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_2.Selected.Result,ID))
         Size: =24
         Text: ="検索"
         Width: =213
@@ -348,7 +350,7 @@ List_screen As screen:
         Y: =132
         ZIndex: =18
 
-    Dropdown2 As dropdown:
+    Condition_dropdown_1 As dropdown:
         Height: =33
         Items: |-
             =Distinct(
@@ -361,7 +363,7 @@ List_screen As screen:
         Y: =147
         ZIndex: =19
 
-    Dropdown2_1 As dropdown:
+    Conditon_dropdown_2 As dropdown:
         Height: =33
         Items: =Distinct(Venue_table,name)
         Size: =21
@@ -370,7 +372,7 @@ List_screen As screen:
         Y: =148
         ZIndex: =20
 
-    Dropdown2_2 As dropdown:
+    Sort_dropdown_1 As dropdown:
         Height: =33
         Items: =["評価1","評価2","評価3","評価4","評価5","評価６"]
         OnSelect: =
@@ -380,7 +382,7 @@ List_screen As screen:
         Y: =148
         ZIndex: =21
 
-    Dropdown2_3 As dropdown:
+    Sort_dropdown_2 As dropdown:
         Height: =33
         Items: =["昇順","降順"]
         Size: =21
