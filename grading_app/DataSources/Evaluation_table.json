@@ -1,0 +1,49 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-02-28T22:21:17.1610000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "添付ファイル",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "拡張子付きのファイル名",
+      "{FullPath}": "完全パス ",
+      "{HasAttachments}": "添付ファイルあり",
+      "{Identifier}": "識別子",
+      "{IsFolder}": "フォルダーである",
+      "{Link}": "アイテムへのリンク",
+      "{ModerationComment}": "このリスト アイテムのコンテンツの承認に関連付けられているコメント",
+      "{ModerationStatus}": "コンテンツの承認状態",
+      "{Name}": "名前",
+      "{Path}": "フォルダーのパス",
+      "{Thumbnail}": "サムネイル",
+      "{TriggerWindowEndToken}": "ウィンドウ終了のトークンのトリガー",
+      "{TriggerWindowStartToken}": "ウィンドウ開始のトークンのトリガー",
+      "{VersionNumber}": "バージョン番号",
+      "Author": "登録者",
+      "Author#Claims": "登録者 Claims",
+      "ComplianceAssetId": "コンプライアンス資産 ID",
+      "Created": "登録日時",
+      "Editor": "更新者",
+      "Editor#Claims": "更新者 Claims",
+      "evaluation_1": "evaluation_1",
+      "evaluation_2": "evaluation_2",
+      "evaluation_3": "evaluation_3",
+      "evaluation_4": "evaluation_4",
+      "evaluation_5": "evaluation_5",
+      "evaluation_6": "evaluation_6",
+      "ID": "ID",
+      "Modified": "更新日時",
+      "Title": "タイトル"
+    },
+    "DatasetName": "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Evaluation_table",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

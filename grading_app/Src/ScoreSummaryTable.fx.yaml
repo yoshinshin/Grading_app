@@ -39,9 +39,9 @@ ScoreSummaryTable As screen:
         Fill: =RGBA(39, 113, 194, 1)
         Height: =56
         Size: =16
-        Text: ="平均点"
-        Width: =120
-        X: =850
+        Text: ="合計点"
+        Width: =220
+        X: =650
         Y: =145
         ZIndex: =14
 
@@ -56,18 +56,6 @@ ScoreSummaryTable As screen:
         X: =450
         Y: =145
         ZIndex: =15
-
-    grader_3 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(39, 113, 194, 1)
-        Height: =56
-        Size: =16
-        Text: ="採点者3"
-        Width: =200
-        X: =650
-        Y: =145
-        ZIndex: =16
 
     Icon1_7 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
@@ -142,7 +130,7 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="15"
         Width: =154
-        X: =833
+        X: =683
         Y: =201
         ZIndex: =24
 
@@ -152,7 +140,7 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="15"
         Width: =154
-        X: =833
+        X: =683
         Y: =271
         ZIndex: =25
 
@@ -163,8 +151,8 @@ ScoreSummaryTable As screen:
         Height: =56
         Size: =16
         Text: ="偏差値"
-        Width: =120
-        X: =970
+        Width: =220
+        X: =870
         Y: =145
         ZIndex: =27
 
@@ -174,7 +162,7 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="50"
         Width: =154
-        X: =953
+        X: =904
         Y: =271
         ZIndex: =29
 
@@ -184,51 +172,7 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="50"
         Width: =154
-        X: =953
+        X: =904
         Y: =201
         ZIndex: =30
-
-    total_3 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(39, 113, 194, 1)
-        Height: =56
-        Size: =16
-        Text: ="全体平均点"
-        Width: =120
-        X: =794
-        Y: =507
-        ZIndex: =31
-
-    total_4 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(39, 113, 194, 1)
-        Height: =56
-        Size: =16
-        Text: ="標準偏差"
-        Width: =120
-        X: =970
-        Y: =507
-        ZIndex: =32
-
-    Label2_8 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="15"
-        Width: =154
-        X: =777
-        Y: =563
-        ZIndex: =33
-
-    Label2_11 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="0"
-        Width: =154
-        X: =953
-        Y: =563
-        ZIndex: =34
 
