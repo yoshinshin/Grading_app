@@ -39,30 +39,5 @@
     "dependencies": {},
     "dependents": [],
     "id": "d6d87367-50af-44df-bd8a-509b1596d09d"
-  },
-  "f0f92a96-4e3d-41df-bf3d-72cdfbb5d4b6": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "SharePoint",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/releases/ase-v3/1.0.1622.3200/sharepointonline/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
-    },
-    "datasets": {
-      "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp": {
-        "dataSources": {
-          "Evaluation_table": {
-            "tableName": "f7f137f1-f5b6-43f5-a485-60e459627e72"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Evaluation_table"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "f0f92a96-4e3d-41df-bf3d-72cdfbb5d4b6"
   }
 }
