@@ -568,7 +568,7 @@ View_screen As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="User_id"
             Default: =ThisItem.user_id
-            DisplayMode: = View
+            DisplayMode: = DisplayMode.View
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"User_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =89
@@ -642,7 +642,7 @@ View_screen As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="venue_id"
             Default: =ThisItem.venue_id
-            DisplayMode: =View
+            DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"venue_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
