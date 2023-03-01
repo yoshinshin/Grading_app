@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2023-02-28T22:21:17.1610000Z",
+      "LastChangedTimeString": "2022-12-14T22:31:27.0830000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -29,7 +29,12 @@
       "Created": "登録日時",
       "Editor": "更新者",
       "Editor#Claims": "更新者 Claims",
-      "evaluation_id": "evaluation_id",
+      "evaluation_1": "evaluation_1",
+      "evaluation_2": "evaluation_2",
+      "evaluation_3": "evaluation_3",
+      "evaluation_4": "evaluation_4",
+      "evaluation_5": "evaluation_5",
+      "evaluation_6": "evaluation_6",
       "feedback": "feedback",
       "Group_id": "group_id",
       "ID": "ID",
