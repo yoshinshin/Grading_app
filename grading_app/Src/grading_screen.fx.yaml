@@ -2,7 +2,7 @@ Grading_screen As screen:
     OnVisible: =NewForm(Form1);
 
     Form1 As form:
-        DataSource: =Grading_table
+        DataSource: =Evaluation_table
         DefaultMode: =FormMode.New
         Height: =484
         NumberOfColumns: =6
@@ -92,7 +92,7 @@ Grading_screen As screen:
             DataField: ="evaluation_1"
             Default: =ThisItem.evaluation_1
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_1")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_1")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =36
             Required: =true
@@ -159,7 +159,7 @@ Grading_screen As screen:
             DataField: ="evaluation_2"
             Default: =ThisItem.evaluation_2
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_2")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_2")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
@@ -227,7 +227,7 @@ Grading_screen As screen:
             DataField: ="evaluation_3"
             Default: =ThisItem.evaluation_3
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_3")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_3")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
@@ -295,7 +295,7 @@ Grading_screen As screen:
             DataField: ="evaluation_4"
             Default: =ThisItem.evaluation_4
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_4")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_4")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
@@ -362,7 +362,7 @@ Grading_screen As screen:
             DataField: ="evaluation_5"
             Default: =ThisItem.evaluation_5
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_5")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_5")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
@@ -429,7 +429,7 @@ Grading_screen As screen:
             DataField: ="evaluation_6"
             Default: =ThisItem.evaluation_6
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_6")
+            DisplayName: =DataSourceInfo([@Evaluation_table],DataSourceInfo.DisplayName,"evaluation_6")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true

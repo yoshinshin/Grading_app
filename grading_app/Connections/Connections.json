@@ -34,7 +34,8 @@
       "Grading_table",
       "Group_table",
       "User_table",
-      "Venue_table"
+      "Venue_table",
+      "Evaluation_table"
     ],
     "dependencies": {},
     "dependents": [],

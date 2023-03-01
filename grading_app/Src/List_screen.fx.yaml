@@ -77,7 +77,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.タイトル
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_1)
                 Width: =71
                 X: =578
                 ZIndex: =6
@@ -87,7 +87,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.user_id
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_2)
                 Width: =71
                 X: =649
                 ZIndex: =7
@@ -97,7 +97,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.group_id
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_3)
                 Width: =71
                 X: =720
                 ZIndex: =8
@@ -107,7 +107,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.venue_id
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_4)
                 Width: =71
                 X: =788
                 ZIndex: =9
@@ -117,7 +117,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.feedback
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_5)
                 Width: =72
                 X: =848
                 ZIndex: =10
@@ -137,7 +137,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =(ThisItem.evaluation_1+ThisItem.evaluation_2+ThisItem.evaluation_3+ThisItem.evaluation_4+ThisItem.evaluation_5+ThisItem.evaluation_6)
+                Text: =Sum(eval1_val.Text +eval2_val.Text +eval3_val.Text +eval4_val.Text + eval5_val.Text + eval6_val.Text)
                 Width: =71
                 X: =985
                 ZIndex: =12
