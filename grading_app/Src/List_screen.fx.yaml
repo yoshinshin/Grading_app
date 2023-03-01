@@ -1,7 +1,8 @@
 List_screen As screen:
-    Fill: =Whit
     OnVisible: |-
-        =UpdateContext({eval_table: Table({col1:"評価1",col2:"evaluation1"})})
+        =UpdateContext({
+            eval_table: Table({name:"評価1",val:"evaluation_1"},{name:"評価2",val:"evaluation_2"},{name:"評価3",val:"evaluation_3"},{name:"評価4",val:"evaluation_5"},{name:"評価1",val:"evaluation_6"})
+            })
 
     List_gallery As gallery.galleryVertical:
         Height: =389
@@ -139,7 +140,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_6
+                Text: =LookUp(Evaluation_table,ID = ThisItem.evaluation_id,evaluation_6)
                 Width: =65
                 X: =920
                 ZIndex: =11

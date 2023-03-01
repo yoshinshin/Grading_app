@@ -29,20 +29,21 @@
       "Created": "登録日時",
       "Editor": "更新者",
       "Editor#Claims": "更新者 Claims",
-      "evaluation_id": "evaluation_id",
-      "feedback": "feedback",
-      "Group_id": "group_id",
+      "evaluation_1": "evaluation_1",
+      "evaluation_2": "evaluation_2",
+      "evaluation_3": "evaluation_3",
+      "evaluation_4": "evaluation_4",
+      "evaluation_5": "evaluation_5",
+      "evaluation_6": "evaluation_6",
       "ID": "ID",
       "Modified": "更新日時",
-      "Title": "タイトル",
-      "User_id": "user_id",
-      "venue_id": "venue_id"
+      "Title": "タイトル"
     },
     "DatasetName": "https://chuouniv.sharepoint.com/sites/msteams_a361fb-grp",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "Grading_table",
+    "Name": "Evaluation_table",
     "Type": "ConnectedDataSourceInfo"
   }
 ]
