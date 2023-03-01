@@ -6,20 +6,7 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: |
-            =  If(
-                Sort_dropdown_1.Selected.Value="評価1"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Ascending),
-                If(Sort_dropdown_1.Selected.Value="評価1"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_1",SortOrder.Descending),
-                If(Sort_dropdown_1.Selected.Value="評価2"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Ascending),
-                If(Sort_dropdown_1.Selected.Value="評価2"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_2",SortOrder.Descending),
-                 If(Sort_dropdown_1.Selected.Value="評価3"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Ascending),
-                 If(Sort_dropdown_1.Selected.Value="評価3"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_3",SortOrder.Descending),
-                 If(Sort_dropdown_1.Selected.Value="評価4"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Ascending),
-                If(Sort_dropdown_1.Selected.Value="評価4"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_4",SortOrder.Descending),
-                If(Sort_dropdown_1.Selected.Value="評価5"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Ascending),
-                If(Sort_dropdown_1.Selected.Value="評価5"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_5",SortOrder.Descending),
-                If(Sort_dropdown_1.Selected.Value="評価6"&& Sort_dropdown_2.Selected.Value="昇順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Ascending),
-                If(Sort_dropdown_1.Selected.Value="評価6"&& Sort_dropdown_2.Selected.Value="降順",SortByColumns(Grading_table,"evaluation_6",SortOrder.Descending)))))))))))))
+        Items: =Grading_table
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
@@ -90,7 +77,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_1
+                Text: =ThisItem.タイトル
                 Width: =71
                 X: =578
                 ZIndex: =6
@@ -100,7 +87,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_2
+                Text: =ThisItem.user_id
                 Width: =71
                 X: =649
                 ZIndex: =7
@@ -110,7 +97,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_3
+                Text: =ThisItem.group_id
                 Width: =71
                 X: =720
                 ZIndex: =8
@@ -120,7 +107,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_4
+                Text: =ThisItem.venue_id
                 Width: =71
                 X: =788
                 ZIndex: =9
@@ -130,7 +117,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_5
+                Text: =ThisItem.feedback
                 Width: =72
                 X: =848
                 ZIndex: =10
