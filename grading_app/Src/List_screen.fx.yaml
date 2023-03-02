@@ -8,22 +8,9 @@ List_screen As screen:
         Height: =389
         Items: |-
             =If(
-                Sort_dropdown_1.Selected.Result = "--",
+                Sort_dropdown_1.Selected.Result="--",
                 Grading_table,
-                SortByColumns(
-                    Grading_table,
-                    LookUp(
-                        eval_table,
-                        name = Sort_dropdown_1.Selected.Result,
-                        val
-                    ),
-                    If(
-                        Sort_dropdown_2.Selected.Value = "昇順",
-                        SortOrder.Ascending,
-                        SortOrder.Descending
-                    )
-                )
-            )
+                SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61

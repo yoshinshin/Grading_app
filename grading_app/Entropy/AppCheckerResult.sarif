@@ -183,10 +183,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 61,
-                  "charOffset": 102,
+                  "charLength": 59,
+                  "charOffset": 97,
                   "snippet": {
-                    "text": "LookUp(eval_table,name = Sort_dropdown_1.Selected.Result,val)"
+                    "text": "LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val)"
                   }
                 }
               },
