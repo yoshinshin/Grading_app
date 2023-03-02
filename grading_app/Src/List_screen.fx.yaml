@@ -6,7 +6,7 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: =Filter(If(Sort_dropdown_1.Selected.Result="--",Grading_table,SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending))),user_id=LookUp(User_table,name=Condition_dropdown_1.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_2.Selected.Result,ID))
+        Items: =Filter(If(Sort_dropdown_1.Selected.Result="--",Grading_table,SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending))),user_id=LookUp(User_table,name=Condition_dropdown_2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_3.Selected.Result,ID))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
@@ -324,29 +324,25 @@ List_screen As screen:
         Size: =21
         Text: ="並び替え"
         Width: =344
-        X: =443
+        X: =647
         Y: =117
         ZIndex: =17
 
-    Condition_dropdown_1 As dropdown:
+    Condition_dropdown_2 As dropdown:
         Height: =33
-        Items: |-
-            =Distinct(
-                User_table,
-                name
-            )
+        Items: =Distinct(User_table,name).Result
         Size: =21
         Width: =168
-        X: =74
+        X: =263
         Y: =147
         ZIndex: =19
 
-    Conditon_dropdown_2 As dropdown:
+    Conditon_dropdown_3 As dropdown:
         Height: =33
-        Items: =Distinct(Venue_table,name)
+        Items: =Distinct(Venue_table,name).Result
         Size: =21
         Width: =168
-        X: =258
+        X: =465
         Y: =148
         ZIndex: =20
 
@@ -356,8 +352,8 @@ List_screen As screen:
         OnSelect: =
         Size: =21
         Width: =168
-        X: =463
-        Y: =148
+        X: =710
+        Y: =147
         ZIndex: =21
 
     Sort_dropdown_2 As dropdown:
@@ -365,7 +361,16 @@ List_screen As screen:
         Items: =["昇順","降順"]
         Size: =21
         Width: =168
-        X: =667
-        Y: =148
+        X: =905
+        Y: =147
         ZIndex: =22
+
+    Condition_dropdown_1 As dropdown:
+        Height: =33
+        Items: =Distinct(Group_table,name).Result
+        Size: =21
+        Width: =168
+        X: =74
+        Y: =148
+        ZIndex: =23
 
