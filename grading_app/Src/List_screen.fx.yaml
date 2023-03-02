@@ -328,16 +328,6 @@ List_screen As screen:
         Y: =117
         ZIndex: =17
 
-    Button6 As button:
-        Height: =48
-        OnSelect: =Filter(Grading_table,user_id=LookUp(User_table,name=Condition_dropdown_1.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_2.Selected.Result,ID))
-        Size: =24
-        Text: ="検索"
-        Width: =213
-        X: =864
-        Y: =132
-        ZIndex: =18
-
     Condition_dropdown_1 As dropdown:
         Height: =33
         Items: |-
