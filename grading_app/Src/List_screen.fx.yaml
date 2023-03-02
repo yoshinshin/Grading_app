@@ -1,14 +1,25 @@
 List_screen As screen:
-    OnVisible: |-
-        =UpdateContext({
-            eval_table: Table({name:"--",val:"none"},{name:"評価1",val:"evaluation_1"},{name:"評価2",val:"evaluation_2"},{name:"評価3",val:"evaluation_3"},{name:"評価4",val:"evaluation_4"},{name:"評価5",val:"evaluation_5"},{name:"評価1",val:"evaluation_6"})
-            })
+    OnVisible: |
+        =UpdateContext(
+            {
+                //評価$とevaluation$を紐づけるテーブルを定義
+                eval_table:Table(
+                {name:"--",val:"none"},
+                {name:"評価1",val:"evaluation_1"},
+                {name:"評価2",val:"evaluation_2"},
+                {name:"評価3",val:"evaluation_3"},
+                {name:"評価4",val:"evaluation_4"},
+                {name:"評価5",val:"evaluation_5"},
+                {name:"評価1",val:"evaluation_6"}
+                )
+            }
+        )
 
     List_gallery As gallery.galleryVertical:
         Height: =389
         Items: =Filter(If(Sort_dropdown_1.Selected.Result="--",Grading_table,SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending))),user_id=LookUp(User_table,name=Condition_dropdown_2.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_3.Selected.Result,ID))
         Layout: =Layout.Vertical
-        OnSelect: =
+        OnSelect: =Navigate(View_screen)
         TemplateSize: =61
         Width: =1079
         X: =31
@@ -312,7 +323,7 @@ List_screen As screen:
 
     Label6 As label:
         Height: =26
-        Size: =21
+        Size: =18
         Text: ="絞り込み"
         Width: =291
         X: =74
@@ -321,17 +332,17 @@ List_screen As screen:
 
     Label7 As label:
         Height: =26
-        Size: =21
+        Size: =18
         Text: ="並び替え"
         Width: =344
-        X: =647
+        X: =710
         Y: =117
         ZIndex: =17
 
     Condition_dropdown_2 As dropdown:
         Height: =33
-        Items: =Distinct(User_table,name).Result
-        Size: =21
+        Items: =Filter(User_table,!(name = "管理者"))
+        Size: =16
         Width: =168
         X: =263
         Y: =147
@@ -339,8 +350,8 @@ List_screen As screen:
 
     Conditon_dropdown_3 As dropdown:
         Height: =33
-        Items: =Distinct(Venue_table,name).Result
-        Size: =21
+        Items: =Venue_table.name
+        Size: =16
         Width: =168
         X: =465
         Y: =148
@@ -350,7 +361,7 @@ List_screen As screen:
         Height: =33
         Items: =Distinct(eval_table,name).Result
         OnSelect: =
-        Size: =21
+        Size: =16
         Width: =168
         X: =710
         Y: =147
@@ -359,7 +370,7 @@ List_screen As screen:
     Sort_dropdown_2 As dropdown:
         Height: =33
         Items: =["昇順","降順"]
-        Size: =21
+        Size: =16
         Width: =168
         X: =905
         Y: =147
@@ -367,8 +378,10 @@ List_screen As screen:
 
     Condition_dropdown_1 As dropdown:
         Height: =33
-        Items: =Distinct(Group_table,name).Result
-        Size: =21
+        Items: =Group_table.name
+        OnChange: |-
+            =UpdateContext({gro: Group_table.name})
+        Size: =16
         Width: =168
         X: =74
         Y: =148

@@ -33,7 +33,7 @@ GradingCertification_screen As screen:
         Size: =21
         Width: =446
         X: =633
-        Y: =337
+        Y: =430
         ZIndex: =6
 
     group_dropdown As dropdown:
@@ -42,7 +42,7 @@ GradingCertification_screen As screen:
         Size: =21
         Width: =446
         X: =633
-        Y: =432
+        Y: =332
         ZIndex: =7
 
     Label11 As label:
@@ -66,7 +66,7 @@ GradingCertification_screen As screen:
     Label11_2 As label:
         Height: =70
         Size: =21
-        Text: ="採点者を選択"
+        Text: ="採点するグループを選択"
         Width: =560
         X: =40
         Y: =337
@@ -75,7 +75,7 @@ GradingCertification_screen As screen:
     Label11_3 As label:
         Height: =70
         Size: =21
-        Text: ="採点するグループを選択"
+        Text: ="自分の名前を選択"
         Width: =560
         X: =40
         Y: =432
