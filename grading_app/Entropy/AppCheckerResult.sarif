@@ -274,19 +274,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_2.AccessibleLabel"
+                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_2.AccessibleLabel",
+                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "List_screen",
-                "type": "List_screen.Condition_dropdown_2"
+                "type": "List_screen.Condition_dropdown_1"
               }
             }
           ],
@@ -304,19 +304,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Conditon_dropdown_3.AccessibleLabel"
+                  "fullyQualifiedName": "List_screen.Conditon_dropdown_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Conditon_dropdown_3.AccessibleLabel",
+                  "fullyQualifiedName": "List_screen.Conditon_dropdown_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "List_screen",
-                "type": "List_screen.Conditon_dropdown_3"
+                "type": "List_screen.Conditon_dropdown_2"
               }
             }
           ],
@@ -1217,36 +1217,6 @@
                 "member": "AccessibleLabel",
                 "module": "GradingCertification_screen",
                 "type": "GradingCertification_screen.group_dropdown"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "List_screen",
-                "type": "List_screen.Condition_dropdown_1"
               }
             }
           ],
