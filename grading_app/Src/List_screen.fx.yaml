@@ -6,11 +6,7 @@ List_screen As screen:
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: |-
-            =If(
-                Sort_dropdown_1.Selected.Result="--",
-                Grading_table,
-                SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)))
+        Items: =Filter(If(Sort_dropdown_1.Selected.Result="--",Grading_table,SortByColumns(Grading_table,LookUp(eval_table,name=Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending))),user_id=LookUp(User_table,name=Condition_dropdown_1.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_2.Selected.Result,ID))
         Layout: =Layout.Vertical
         OnSelect: =
         TemplateSize: =61
@@ -334,7 +330,7 @@ List_screen As screen:
 
     Button6 As button:
         Height: =48
-        OnSelect: =Filter(Grading_table,user_id=LookUp(User_table,name=Condition_dropdown_1.Selected.Result,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_2.Selected.Result,ID))
+        OnSelect: =
         Size: =24
         Text: ="検索"
         Width: =213
