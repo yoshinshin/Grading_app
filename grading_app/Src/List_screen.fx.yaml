@@ -1,34 +1,51 @@
 List_screen As screen:
     OnVisible: |-
         =//未選択とグループ名、採点者名、会場名のコレクションを定義
-        ClearCollect(group,{Group_name:"--"});
-        Collect(group,Group_table.name);
+        Reset(Sort_dropdown_1);
+        ClearCollect(group_col,{name:"グループを選択",isDef: true});
+        Collect(group_col,AddColumns(Group_table.name,"isDef",false));
         
-        ClearCollect(grader,{User_name:"--"});
-        Collect(grader,User_table.name);
+        ClearCollect(grader_col,{name:"採点者を選択",isDef:true});
+        Collect(grader_col,AddColumns(User_table.name,"isDef",false));
         
-        ClearCollect(venue,{name:"--"});
-        Collect(venue,Venue_table.name);
+        ClearCollect(venue_col,{name:"会場を選択",isDef:true});
+        Collect(venue_col,AddColumns(Venue_table.name,"isDef",false));
         
-        UpdateContext(
-            {
-                //評価$とevaluation$を紐づけるテーブルを定義
-                eval_table:Table(
-                {name:"評価1",val:"evaluation_1"},
-                {name:"評価2",val:"evaluation_2"},
-                {name:"評価3",val:"evaluation_3"},
-                {name:"評価4",val:"evaluation_4"},
-                {name:"評価5",val:"evaluation_5"},
-                {name:"評価1",val:"evaluation_6"}
+        ClearCollect(eval_col,{name:"項目を選択",val:"def",isDef:true});
+        Collect(eval_col,{name:"評価1",val:"evaluation_1",isDef:false},{name:"評価2",val:"evaluation_2",isDef:false},{name:"評価3",val:"evaluation_3",isDef:false},{name:"評価4",val:"evaluation_4",isDef:false},{name:"評価5",val:"evaluation_5",isDef:false},{name:"評価6",val:"evaluation_6",isDef:false},{name:"合計得点",val:"evaluation_total",isDef:false});
+        
+        UpdateContext({
+            isDef_group:true,isDef_grader:true,isDef_venue:true,isDef_eval:true,
+            sorted_table:If(
+            isDef_eval,
+            //並び替え未選択時
+            Grading_table,
+            //並び替え選択時
+            SortByColumns(
+                Grading_table,
+                LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val),
+                If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)
                 )
-            }
+            ),
+            filtered_table:If(
+            isDef_group&&isDef_grader&&isDef_venue,
+            //条件未選択時
+            sorted_table,
+            //条件選択時
+            Filter(sorted_table,
+            //グループ条件処理
+            If(isDef_group,true,group_id = LookUp(Group_table,name = Group_dropdown_1.Selected.name,ID))&&
+            //採点者条件処理
+            If(isDef_grader,true,user_id = LookUp(User_table,name = Grader_dropdown_2.Selected.name,ID))&&
+            //会場条件処理
+            If(isDef_venue,true,venue_id = LookUp(Venue_table,name = Venue_dropdown_3.Selected.name,ID))
+            )
         )
+        })
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: |-
-            =Filter(
-                SortByColumns(Grading_table,LookUp(eval_table,name = Sort_dropdown_1.Selected.Result,val),If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)),user_id=LookUp(User_table,name=Condition_dropdown_2.Selected.name,ID)&&venue_id=LookUp(Venue_table,name=Conditon_dropdown_3.Selected.name,ID))
+        Items: =filtered_table
         Layout: =Layout.Vertical
         OnSelect: =Navigate(View_screen)
         TemplateSize: =61
@@ -159,7 +176,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =Sum(eval1_val.Text +eval2_val.Text +eval3_val.Text +eval4_val.Text + eval5_val.Text + eval6_val.Text)
+                Text: =ThisItem.evaluation_total
                 Width: =71
                 X: =985
                 ZIndex: =12
@@ -334,7 +351,7 @@ List_screen As screen:
 
     Label6 As label:
         Height: =26
-        Size: =18
+        Size: =15
         Text: ="絞り込み"
         Width: =291
         X: =74
@@ -343,61 +360,68 @@ List_screen As screen:
 
     Label7 As label:
         Height: =26
-        Size: =18
+        Size: =15
         Text: ="並び替え"
         Width: =344
         X: =710
         Y: =117
         ZIndex: =17
 
-    Condition_dropdown_2 As dropdown:
-        Height: =33
-        Items: =grader
-        Size: =16
-        Width: =168
+    Grader_dropdown_2 As dropdown:
+        Height: =30
+        Items: =grader_col.name
+        OnChange: |-
+            =UpdateContext({
+                isDef_grader:LookUp(grader_col,name = Self.Selected.name,isDef)
+            })
+        Size: =12
+        Width: =170
         X: =263
-        Y: =147
+        Y: =150
         ZIndex: =19
 
-    Conditon_dropdown_3 As dropdown:
-        Height: =33
-        Items: =venue
-        Size: =16
-        Width: =168
+    Venue_dropdown_3 As dropdown:
+        Height: =30
+        Items: =venue_col.name
+        OnChange: |-
+            =UpdateContext({
+                isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
+            })
+        Size: =12
+        Width: =170
         X: =465
-        Y: =148
+        Y: =150
         ZIndex: =20
 
-    Sort_dropdown_1 As dropdown:
-        AllowEmptySelection: =true
-        Height: =33
-        Items: =Distinct(eval_table,name).Result
-        OnSelect: =
-        Size: =16
-        Width: =168
-        X: =710
-        Y: =147
-        ZIndex: =21
-
     Sort_dropdown_2 As dropdown:
-        AllowEmptySelection: =true
-        Height: =33
+        Height: =30
         Items: =["昇順","降順"]
-        Size: =16
-        Width: =168
+        Size: =12
+        Width: =170
         X: =905
-        Y: =147
+        Y: =150
         ZIndex: =22
 
-    Condition_dropdown_1 As dropdown:
+    Group_dropdown_1 As dropdown:
         Default: ="グループ"
-        Height: =33
-        Items: =group
+        Height: =30
+        Items: =group_col.Group_name
         OnChange: |-
-            =UpdateContext({gro: Group_table.name})
-        Size: =16
-        Width: =168
+            =UpdateContext({isDef_group:LookUp(group_col,name = Self.Selected.name,isDef)})
+        Size: =12
+        Width: =170
         X: =74
-        Y: =148
+        Y: =150
         ZIndex: =23
+
+    Sort_dropdown_1 As dropdown:
+        Height: =30
+        Items: =eval_col.name
+        OnChange: |-
+            =UpdateContext({isDef_eval:LookUp(eval_col,name = Self.Selected.name,isDef),isTotal:"total" = LookUp(eval_col,name = Self.Selected.name,val)})
+        Size: =12
+        Width: =170
+        X: =710
+        Y: =150
+        ZIndex: =24
 

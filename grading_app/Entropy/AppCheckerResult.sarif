@@ -14,26 +14,26 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.List_gallery.Items"
+                  "fullyQualifiedName": "List_screen.OnVisible"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.List_gallery.Items",
+                  "fullyQualifiedName": "List_screen.OnVisible",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 61,
-                  "charOffset": 40,
+                  "charLength": 57,
+                  "charOffset": 1045,
                   "snippet": {
-                    "text": "LookUp(eval_table,name = Sort_dropdown_1.Selected.Result,val)"
+                    "text": "LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val)"
                   }
                 }
               },
               "properties": {
-                "member": "Items",
+                "member": "OnVisible",
                 "module": "List_screen",
-                "type": "List_screen.List_gallery"
+                "type": "List_screen"
               }
             }
           ],
@@ -574,19 +574,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_2.AccessibleLabel"
+                  "fullyQualifiedName": "List_screen.Grader_dropdown_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_2.AccessibleLabel",
+                  "fullyQualifiedName": "List_screen.Grader_dropdown_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "List_screen",
-                "type": "List_screen.Condition_dropdown_2"
+                "type": "List_screen.Grader_dropdown_2"
               }
             }
           ],
@@ -664,19 +664,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel"
+                  "fullyQualifiedName": "List_screen.Group_dropdown_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Condition_dropdown_1.AccessibleLabel",
+                  "fullyQualifiedName": "List_screen.Group_dropdown_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "List_screen",
-                "type": "List_screen.Condition_dropdown_1"
+                "type": "List_screen.Group_dropdown_1"
               }
             }
           ],
@@ -694,19 +694,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.Conditon_dropdown_3.AccessibleLabel"
+                  "fullyQualifiedName": "List_screen.Venue_dropdown_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.Conditon_dropdown_3.AccessibleLabel",
+                  "fullyQualifiedName": "List_screen.Venue_dropdown_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "List_screen",
-                "type": "List_screen.Conditon_dropdown_3"
+                "type": "List_screen.Venue_dropdown_3"
               }
             }
           ],
@@ -1594,17 +1594,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "List_screen.gro"
+                  "fullyQualifiedName": "List_screen.isTotal"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "List_screen.gro",
+                  "fullyQualifiedName": "List_screen.isTotal",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "gro",
+                "member": "isTotal",
                 "module": "List_screen",
                 "type": "List_screen"
               }

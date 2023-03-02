@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "grader",
+    "Name": "grader_col",
     "Type": "CollectionDataSourceInfo"
   }
 ]

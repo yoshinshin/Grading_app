@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "venue",
+    "Name": "eval_col",
     "Type": "CollectionDataSourceInfo"
   }
 ]
