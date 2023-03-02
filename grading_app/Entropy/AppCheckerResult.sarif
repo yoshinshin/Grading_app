@@ -143,10 +143,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 61,
-                  "charOffset": 102,
+                  "charLength": 109,
+                  "charOffset": 117,
                   "snippet": {
-                    "text": "LookUp(eval_table,name = Sort_dropdown_1.Selected.Result,val)"
+                    "text": "LookUp(\n            eval_table,\n            name = Sort_dropdown_1.Selected.Result,\n            val\n        )"
                   }
                 }
               },
