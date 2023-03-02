@@ -166,7 +166,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =false
+                Text: =ThisItem.evaluation_total
                 Width: =71
                 X: =985
                 ZIndex: =12
