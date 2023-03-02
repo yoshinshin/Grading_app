@@ -749,9 +749,8 @@ View_screen As screen:
 
     Button3_1 As button:
         Height: =70
-        OnSelect: |-
-            =If(edit,SubmitForm(Form1_1) & ViewForm(Form1_1),EditForm(Form1_1)) &
-            UpdateContext({edit:!edit})
+        OnSelect: |
+            =If(edit,SubmitForm(Form1_1) & UpdateContext({edit:!(edit)})& Navigate(EditSuccess_screen),EditForm(Form1_1),UpdateContext({edit:!(edit)}))
         Size: =24
         Text: =If(edit,"編集完了","編集モード")
         Width: =280

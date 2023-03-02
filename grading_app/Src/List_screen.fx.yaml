@@ -16,8 +16,7 @@ List_screen As screen:
         
         UpdateContext({
             isDef_group:true,isDef_grader:true,isDef_venue:true,isDef_eval:true,
-            sorted_table:Grading_table,
-            total:Grading_table.evaluation_total
+            sorted_table:Grading_table
         });
 
     List_gallery As gallery.galleryVertical:
@@ -166,7 +165,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_total
+                Text: =Round(ThisItem.evaluation_total,0)
                 Width: =71
                 X: =985
                 ZIndex: =12
@@ -221,7 +220,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =4
 
-        date As label:
+        date_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -233,7 +232,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =5
 
-        room As label:
+        room_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -245,7 +244,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =6
 
-        eval1 As label:
+        eval1_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -257,7 +256,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =7
 
-        eval2 As label:
+        eval2_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -269,7 +268,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =8
 
-        eval3 As label:
+        eval3_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -281,7 +280,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =9
 
-        eval4 As label:
+        eval4_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -293,7 +292,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =10
 
-        eval5 As label:
+        eval5_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -305,7 +304,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =11
 
-        eval6 As label:
+        eval6_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -319,7 +318,7 @@ List_screen As screen:
             Y: =187
             ZIndex: =12
 
-        total As label:
+        total_label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(39, 113, 194, 1)
@@ -386,6 +385,19 @@ List_screen As screen:
     Sort_dropdown_2 As dropdown:
         Height: =30
         Items: =["昇順","降順"]
+        OnChange: |-
+            =UpdateContext({
+            sorted_table:If(
+                LookUp(eval_col,name = Sort_dropdown_1.Selected.name,isDef),
+                //並び替え未選択時
+                Grading_table,
+                //並び替え選択時
+                SortByColumns(
+                    Grading_table,
+                    LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val),
+                    If(Sort_dropdown_2.Selected.Value = "昇順",SortOrder.Ascending,SortOrder.Descending)
+                    )
+                )})
         Size: =12
         Width: =170
         X: =905
@@ -410,14 +422,14 @@ List_screen As screen:
         OnChange: |-
             =UpdateContext({isDef_eval:LookUp(eval_col,name = Self.Selected.name,isDef),
             sorted_table:If(
-                isDef_eval,
+                LookUp(eval_col,name = Self.Selected.name,isDef),
                 //並び替え未選択時
                 Grading_table,
                 //並び替え選択時
                 SortByColumns(
                     Grading_table,
                     LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val),
-                    If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)
+                    If(Sort_dropdown_2.Selected.Value = "昇順",SortOrder.Ascending,SortOrder.Descending)
                     )
                 )
             })
