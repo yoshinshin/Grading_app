@@ -16,36 +16,26 @@ List_screen As screen:
         
         UpdateContext({
             isDef_group:true,isDef_grader:true,isDef_venue:true,isDef_eval:true,
-            sorted_table:If(
-            isDef_eval,
-            //並び替え未選択時
-            Grading_table,
-            //並び替え選択時
-            SortByColumns(
-                Grading_table,
-                LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val),
-                If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)
-                )
-            ),
-            filtered_table:If(
-            isDef_group&&isDef_grader&&isDef_venue,
-            //条件未選択時
-            sorted_table,
-            //条件選択時
-            Filter(sorted_table,
-            //グループ条件処理
-            If(isDef_group,true,group_id = LookUp(Group_table,name = Group_dropdown_1.Selected.name,ID))&&
-            //採点者条件処理
-            If(isDef_grader,true,user_id = LookUp(User_table,name = Grader_dropdown_2.Selected.name,ID))&&
-            //会場条件処理
-            If(isDef_venue,true,venue_id = LookUp(Venue_table,name = Venue_dropdown_3.Selected.name,ID))
-            )
-        )
-        })
+            sorted_table:Grading_table,
+            total:Grading_table.evaluation_total
+        });
 
     List_gallery As gallery.galleryVertical:
         Height: =389
-        Items: =filtered_table
+        Items: |-
+            =If(
+                isDef_group&&isDef_grader&&isDef_venue,
+                //条件未選択時
+                sorted_table,
+                //条件選択時
+                Filter(sorted_table,
+                //グループ条件処理
+                If(isDef_group,true,group_id = LookUp(Group_table,name = Group_dropdown_1.Selected.name,ID))&&
+                //採点者条件処理
+                If(isDef_grader,true,user_id = LookUp(User_table,name = Grader_dropdown_2.Selected.name,ID))&&
+                //会場条件処理
+                If(isDef_venue,true,venue_id = LookUp(Venue_table,name = Venue_dropdown_3.Selected.name,ID))
+            ))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(View_screen)
         TemplateSize: =61
@@ -176,7 +166,7 @@ List_screen As screen:
                 Height: =49
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.evaluation_total
+                Text: =false
                 Width: =71
                 X: =985
                 ZIndex: =12
@@ -405,7 +395,7 @@ List_screen As screen:
     Group_dropdown_1 As dropdown:
         Default: ="グループ"
         Height: =30
-        Items: =group_col.Group_name
+        Items: =group_col.name
         OnChange: |-
             =UpdateContext({isDef_group:LookUp(group_col,name = Self.Selected.name,isDef)})
         Size: =12
@@ -418,7 +408,19 @@ List_screen As screen:
         Height: =30
         Items: =eval_col.name
         OnChange: |-
-            =UpdateContext({isDef_eval:LookUp(eval_col,name = Self.Selected.name,isDef),isTotal:"total" = LookUp(eval_col,name = Self.Selected.name,val)})
+            =UpdateContext({isDef_eval:LookUp(eval_col,name = Self.Selected.name,isDef),
+            sorted_table:If(
+                isDef_eval,
+                //並び替え未選択時
+                Grading_table,
+                //並び替え選択時
+                SortByColumns(
+                    Grading_table,
+                    LookUp(eval_col,name = Sort_dropdown_1.Selected.name,val),
+                    If(Sort_dropdown_2.Selected.Value="昇順",SortOrder.Ascending,SortOrder.Descending)
+                    )
+                )
+            })
         Size: =12
         Width: =170
         X: =710
