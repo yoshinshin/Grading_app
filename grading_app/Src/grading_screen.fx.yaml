@@ -833,6 +833,7 @@ Grading_screen As screen:
         ZIndex: =18
 
         Dropdown1 As dropdown:
+            Default: =LookUp(Group_table,ID = group_id,name)
             Height: =60
             Items: =Group_table.name
             OnChange: |-
@@ -845,9 +846,11 @@ Grading_screen As screen:
             ZIndex: =15
 
         Dropdown2 As dropdown:
+            Default: =LookUp(User_table,ID = grader_id,name)
             Height: =60
             Items: =User_table.name
-            OnChange: =DataCardValue
+            OnChange: |-
+                =UpdateContext({grader_id:LookUp(User_table,name = Self.Selected.name,ID)})
             Size: =19
             Visible: =mode = "edit"
             Width: =230
@@ -856,9 +859,11 @@ Grading_screen As screen:
             ZIndex: =16
 
         Dropdown3 As dropdown:
+            Default: =LookUp(Venue_table,ID = venue_id,name)
             Height: =60
             Items: =Venue_table.name
-            OnChange: =DataCardValue
+            OnChange: |-
+                =UpdateContext({venue_id:LookUp(Venue_table,name = Self.Selected.name,ID)})
             Size: =19
             Visible: =mode = "edit"
             Width: =144
