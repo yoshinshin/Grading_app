@@ -1,0 +1,445 @@
+Management_Screen As screen:
+    OnVisible: |-
+        =UpdateContext({del_v:false,editv:false,selected_tab:"group"})
+
+    tab_group_5 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =6
+
+        Rectangle3_5 As rectangle:
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Icon1_8 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Login_screen, ScreenTransition)
+            Width: =60
+            X: =40
+            Y: =20
+            ZIndex: =2
+
+        Label3_5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Size: =22
+            Text: ="管理者画面：管理画面"
+            Width: =560
+            X: =133
+            Y: =20
+            ZIndex: =3
+
+        Icon1_3 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Login_screen)
+            Width: =60
+            X: =1030
+            Y: =20
+            ZIndex: =4
+
+    Group_MainContainer As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =8
+
+        Gallery2 As gallery.galleryVertical:
+            Height: =448
+            Items: =Group_table
+            Layout: =Layout.Vertical
+            TemplateSize: =72
+            Visible: =selected_tab = "group"
+            Width: =821
+            X: =299
+            Y: =190
+            ZIndex: =5
+
+            Icon2 As icon.Trash:
+                Height: =40
+                Icon: =Icon.Trash
+                OnSelect: |-
+                    =Select(Parent);
+                    UpdateContext({del_v:true,selected_id:Parent.Selected.ID})
+                Width: =40
+                X: =705
+                Y: =16
+                ZIndex: =2
+
+            Icon4 As icon.Edit:
+                Height: =40
+                Icon: =Icon.Edit
+                OnSelect: |-
+                    =Select(Parent);
+                    UpdateContext({selected_id:Parent.Selected.ID,editv:true})
+                Width: =40
+                X: =640
+                Y: =16
+                ZIndex: =3
+
+            Label5 As label:
+                Height: =70
+                OnSelect: =Select(Parent)
+                Size: =20
+                Text: =ThisItem.name
+                Width: =157
+                X: =20
+                Y: =1
+                ZIndex: =4
+
+        Label10 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =59
+            Size: =20
+            Text: ="グループ名"
+            Visible: =selected_tab = "group"
+            Width: =821
+            X: =299
+            Y: =138
+            ZIndex: =6
+
+    Rectangle7 As rectangle:
+        Fill: =If(editv,RGBA(0,0,0,.5),RGBA(0, 0, 0, 0))
+        Height: =Management_Screen.Height
+        Visible: =editv
+        Width: =Management_Screen.Width
+        ZIndex: =12
+
+    Grader_MainContainer As group:
+        Height: =5
+        Width: =5
+        X: =16
+        Y: =2
+        ZIndex: =13
+
+        Gallery2_1 As gallery.galleryVertical:
+            Height: =448
+            Items: =User_table
+            Layout: =Layout.Vertical
+            TemplateSize: =72
+            Visible: =selected_tab = "grader"
+            Width: =821
+            X: =299
+            Y: =190
+            ZIndex: =10
+
+            delete_icon As icon.Trash:
+                Height: =40
+                Icon: =Icon.Trash
+                OnSelect: |-
+                    =Select(Parent);
+                    UpdateContext({del_v:true,selected_id:Parent.Selected.ID})
+                Width: =40
+                X: =705
+                Y: =16
+                ZIndex: =2
+
+            Icon4_1 As icon.Edit:
+                Height: =40
+                Icon: =Icon.Edit
+                OnSelect: |-
+                    =Select(Parent);
+                    UpdateContext({editv:true,selected_id:Parent.Selected.ID})
+                Width: =40
+                X: =640
+                Y: =16
+                ZIndex: =3
+
+            Label5_1 As label:
+                Height: =70
+                OnSelect: =Select(Parent)
+                Size: =20
+                Text: =ThisItem.name
+                Width: =157
+                X: =20
+                Y: =1
+                ZIndex: =4
+
+        Label10_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =59
+            Size: =20
+            Text: ="採点者名"
+            Visible: =selected_tab = "grader"
+            Width: =821
+            X: =299
+            Y: =138
+            ZIndex: =11
+
+    SideBar_container As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =14
+
+        Rectangle5 As rectangle:
+            Fill: =RGBA(215, 223, 240, 1)
+            Height: =Management_Screen.Height - Rectangle3_5.Height
+            Width: =243
+            Y: =100
+            ZIndex: =7
+
+        Label8 As label:
+            Color: =If(selected_tab = "group",RGBA(0,0,0,1),RGBA(56, 96, 178, 1))
+            Fill: =If(selected_tab = "group",Color.White,Rectangle5.Fill)
+            Height: =52
+            OnSelect: |-
+                =UpdateContext({selected_tab:"group"})
+            PaddingLeft: =15
+            Size: =14
+            Text: ="グループ管理"
+            Width: =243
+            Y: =138
+            ZIndex: =8
+
+        Label8_1 As label:
+            Color: =If(selected_tab = "grader",RGBA(0,0,0,1),RGBA(56, 96, 178, 1))
+            Fill: =If(selected_tab = "grader",Color.White,Rectangle5.Fill)
+            Height: =52
+            OnSelect: |-
+                =UpdateContext({selected_tab:"grader"})
+            PaddingLeft: =15
+            Size: =14
+            Text: ="採点者管理"
+            Width: =243
+            Y: =190
+            ZIndex: =9
+
+    Edit_container As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =23
+
+        Rectangle6 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Management_Screen.Height
+            Visible: =editv
+            Width: =Management_Screen.Width*0.5
+            X: =568
+            ZIndex: =13
+
+        Icon5 As icon.Key:
+            Height: =40
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({editv:false})
+            Visible: =editv
+            Width: =40
+            X: =1080
+            Y: =30
+            ZIndex: =14
+
+        Form1 As form:
+            DataSource: =If(selected_tab = "group",Group_table,User_table)
+            Height: =457
+            Item: |-
+                =If(
+                    selected_tab = "group",
+                    LookUp(Group_table,ID = selected_id),
+                    LookUp(User_table,ID = selected_id)
+                )
+            Visible: =editv
+            Width: =547
+            X: =579
+            Y: =91
+            ZIndex: =15
+
+            GroupCard_name As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="name"
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =110
+                Required: =false
+                Visible: =selected_tab = "group"
+                Width: =547
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                TextInput10 As text:
+                    Default: =LookUp(Group_table,ID = selected_id,name)
+                    Height: =49
+                    Size: =18
+                    Width: =476
+                    X: =10
+                    Y: =50
+                    ZIndex: =1
+
+                Label9 As label:
+                    Height: =30
+                    Size: =15
+                    Text: ="グループ名"
+                    Width: =476
+                    X: =10
+                    Y: =10
+                    ZIndex: =2
+
+            GraderCard_name As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="name"
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =110
+                Visible: =selected_tab = "grader"
+                Width: =547
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                Label9_1 As label:
+                    Height: =30
+                    Size: =15
+                    Text: ="採点者名"
+                    Width: =476
+                    X: =10
+                    Y: =10
+                    ZIndex: =1
+
+                TextInput10_1 As text:
+                    Default: =LookUp(User_table,ID = selected_id,name)
+                    Height: =49
+                    Size: =18
+                    Width: =476
+                    X: =10
+                    Y: =50
+                    ZIndex: =2
+
+        Label13 As label:
+            Color: =RGBA(56, 96, 178, 1)
+            Height: =70
+            Size: =23
+            Text: ="編集画面"
+            Visible: =editv
+            Width: =437
+            X: =593
+            Y: =15
+            ZIndex: =16
+
+        Button3 As button:
+            Height: =51
+            OnSelect: |-
+                =If(selected_tab = "group",Patch(Group_table,LookUp(Group_table,ID=selected_id),{
+                    name:TextInput10.Text
+                }));
+                If(selected_tab = "grader",Patch(User_table,LookUp(User_table,ID=selected_id),{
+                    name:TextInput10_1.Text
+                }));
+                UpdateContext({editv:false})
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =17
+            Text: ="保存"
+            Visible: =editv
+            Width: =541
+            X: =579
+            Y: =574
+            ZIndex: =17
+
+    del_v As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =23
+
+        Rectangle8 As rectangle:
+            BorderColor: =RGBA(239,52,35,1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =300
+            Visible: =del_v
+            Width: =300
+            X: =418
+            Y: =169
+            ZIndex: =18
+
+        Icon6 As icon.Trash:
+            Color: =RGBA(239,52,35,1)
+            Height: =65
+            Icon: =Icon.Trash
+            Visible: =del_v
+            Width: =75
+            X: =526
+            Y: =208
+            ZIndex: =19
+
+        Label14 As label:
+            Align: =Align.Center
+            Height: =70
+            Text: ="本当に削除しますか？"
+            Visible: =del_v
+            Width: =258
+            X: =435
+            Y: =284
+            ZIndex: =20
+
+        deleteButton As button:
+            BorderColor: =RGBA(239,52,35,1)
+            Color: =RGBA(239,52,35,1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =37
+            HoverColor: =RGBA(239,52,35,1)
+            HoverFill: =
+            OnSelect: |-
+                =UpdateContext({editv:false,del_v:false})
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Text: ="キャンセル"
+            Visible: =del_v
+            Width: =210
+            X: =459
+            Y: =354
+            ZIndex: =21
+
+        cancelButton As button:
+            BorderColor: =RGBA(239,52,35,1)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255,255,255,1)
+            Fill: =RGBA(239,52,35,1)
+            Height: =37
+            HoverColor: =RGBA(255,255,255,1)
+            HoverFill: =
+            OnSelect: |-
+                =Remove(Group_table,LookUp(Group_table,ID = selected_id));
+                UpdateContext({editv:false,del_v:false})
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Text: ="削除"
+            Visible: =del_v
+            Width: =210
+            X: =458
+            Y: =405
+            ZIndex: =22
+
+    Icon8 As icon.Compose:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =60
+        Icon: =Icon.Compose
+        OnSelect: =
+        X: =945
+        Y: =20
+        ZIndex: =25
+
