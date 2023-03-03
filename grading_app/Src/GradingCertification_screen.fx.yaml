@@ -9,17 +9,10 @@ GradingCertification_screen As screen:
         Y: =236
         ZIndex: =1
 
-    Icon1_1 As icon.ChevronLeft:
-        Icon: =Icon.ChevronLeft
-        OnSelect: =Navigate(Login_screen, ScreenTransition)
-        X: =40
-        Y: =40
-        ZIndex: =4
-
     Button2 As button:
         Height: =70
         OnSelect: |-
-            =Navigate(Grading_screen, ScreenTransition,{venue_id:room_dropdown.Selected.ID,grader_id:LookUp(User_table,name = grader_dropdown.Selected.name,ID),group_id:group_dropdown.Selected.ID})
+            =Navigate(Grading_screen, ScreenTransition,{venue_id:room_dropdown.Selected.ID,grader_id:LookUp(User_table,name = grader_dropdown.Selected.name,ID),group_id:group_dropdown.Selected.ID,mode:"new"})
         Size: =24
         Text: ="採点画面へ"
         Width: =280
@@ -100,4 +93,45 @@ GradingCertification_screen As screen:
         X: =633
         Y: =141
         ZIndex: =13
+
+    tab_group_3 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =18
+
+        Rectangle3_3 As rectangle:
+            Width: =Parent.Width
+            ZIndex: =14
+
+        Icon1_10 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Login_screen, ScreenTransition)
+            Width: =60
+            X: =40
+            Y: =20
+            ZIndex: =15
+
+        Label3_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Size: =22
+            Text: ="採点者画面：情報入力画面"
+            Width: =560
+            X: =133
+            Y: =20
+            ZIndex: =16
+
+        Icon1_4 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Login_screen)
+            Width: =60
+            X: =1030
+            Y: =20
+            ZIndex: =17
 

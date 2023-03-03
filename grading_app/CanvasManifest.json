@@ -123,9 +123,9 @@
     "List_screen",
     "GradingCertification_screen",
     "Grading_screen",
-    "View_screen",
     "NewSuccess_screen",
     "EditSuccess_screen",
-    "ScoreSummaryTable"
+    "ScoreSummaryTable",
+    "Screen1"
   ]
 }

@@ -28,16 +28,6 @@
         Y: =iconCheck1.Y + iconCheck1.Height + 100
         ZIndex: =3
 
-    Button4 As button:
-        Height: =50
-        OnSelect: =Exit()
-        Size: =16
-        Text: ="終了"
-        Width: =190
-        X: =473
-        Y: =446
-        ZIndex: =4
-
     Button4_2 As button:
         Height: =50
         OnSelect: =Navigate(GradingCertification_screen)
@@ -45,6 +35,6 @@
         Text: ="採点者画面"
         Width: =190
         X: =473
-        Y: =516
+        Y: =450
         ZIndex: =5
 

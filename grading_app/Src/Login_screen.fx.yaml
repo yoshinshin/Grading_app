@@ -79,3 +79,24 @@ Login_screen As screen:
             Y: =301
             ZIndex: =5
 
+    tab_group_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =10
+
+        Rectangle3_1 As rectangle:
+            Width: =Parent.Width
+            ZIndex: =6
+
+        Label3_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Size: =22
+            Text: ="ログイン画面"
+            Width: =560
+            X: =133
+            Y: =20
+            ZIndex: =8
+

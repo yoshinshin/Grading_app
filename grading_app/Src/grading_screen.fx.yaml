@@ -1,64 +1,43 @@
 Grading_screen As screen:
     OnVisible: |-
-        =NewForm(NewForm);
-        ResetForm(NewForm)
+        =If(
+            mode = "new",
+            NewForm(Form)&ResetForm(Form),
+            ViewForm(Form)
+        )
 
     DoneButton As button:
-        Height: =70
+        Height: =60
         OnSelect: |-
-            =SubmitForm(NewForm);
-            Navigate(NewSuccess_screen)
+            =If(
+                mode = "new",SubmitForm(Form)&Navigate(NewSuccess_screen),
+                If(
+                    mode = "view", EditForm(Form)&UpdateContext({mode:"edit"}),
+                    SubmitForm(Form) & Navigate(EditSuccess_screen)
+                )
+            )
         Size: =24
-        Text: ="入力完了"
+        Text: =Switch(mode,"new","入力完了","view","編集モード","編集完了")
         Width: =280
         X: =800
-        Y: =40
+        Y: =160
         ZIndex: =2
 
-    Label5_3 As label:
-        Height: =57
-        Size: =20
-        Text: |
-            =LookUp(Group_table,ID = group_id,name)
-        Width: =177
-        X: =272
-        Y: =46
-        ZIndex: =3
-
-    Label5_4 As label:
-        Height: =50
-        Size: =20
-        Text: =LookUp(User_table,ID = grader_id,name)
-        Width: =134
-        X: =138
-        Y: =50
-        ZIndex: =4
-
-    Label5_5 As label:
-        Height: =50
-        Size: =20
-        Text: =LookUp(Venue_table,ID = venue_id,name)
-        Width: =134
-        X: =496
-        Y: =49
-        ZIndex: =5
-
-    Icon1_3 As icon.ChevronLeft:
-        Icon: =Icon.ChevronLeft
-        OnSelect: =Navigate(GradingCertification_screen, ScreenTransition)
-        X: =40
-        Y: =40
-        ZIndex: =6
-
-    NewForm As form:
+    Form As form:
         DataSource: =Grading_table
-        DefaultMode: =FormMode.New
-        Height: =484
-        NumberOfColumns: =6
+        DefaultMode: |-
+            =If(
+                mode = "new",
+                FormMode.New,
+                FormMode.View
+            )
+        Height: =378
+        Item: =If(!(mode = "new"),List_gallery.Selected)
+        NumberOfColumns: =12
         SnapToColumns: =false
         Width: =1097
         X: =24
-        Y: =147
+        Y: =250
         ZIndex: =7
 
         group_id_DataCard3_2 As typedDataCard.textualEditCard:
@@ -143,10 +122,10 @@ Grading_screen As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"evaluation_1")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =36
+            Height: =120
             Required: =true
             Update: =DataCardValue15_2.Selected.Value
-            Width: =279
+            Width: =180
             X: =0
             Y: =1
             ZIndex: =1
@@ -213,7 +192,7 @@ Grading_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue16_2.Selected.Value
-            Width: =276
+            Width: =180
             X: =1
             Y: =1
             ZIndex: =1
@@ -281,7 +260,7 @@ Grading_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue17_2.Selected.Value
-            Width: =279
+            Width: =180
             X: =2
             Y: =1
             ZIndex: =1
@@ -349,7 +328,7 @@ Grading_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue18_2.Selected.Value
-            Width: =274
+            Width: =180
             X: =3
             Y: =1
             ZIndex: =1
@@ -416,7 +395,7 @@ Grading_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue19_2.Selected.Value
-            Width: =276
+            Width: =180
             X: =4
             Y: =1
             ZIndex: =1
@@ -483,7 +462,7 @@ Grading_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue20_2.Selected.Value
-            Width: =276
+            Width: =180
             X: =5
             Y: =1
             ZIndex: =1
@@ -615,7 +594,7 @@ Grading_screen As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="User_id"
             Default: =grader_id
-            DisplayMode: = DisplayMode.View
+            DisplayMode: =DisplayMode.Edit
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"User_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =89
@@ -758,4 +737,132 @@ Grading_screen As screen:
                 Wrap: =false
                 Y: =DataCardKey5_2.Y
                 ZIndex: =4
+
+    gs_infoLabels As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =11
+
+        gs_group_label As label:
+            Height: =60
+            Size: =19
+            Text: |
+                =LookUp(Group_table,ID = group_id,name)
+            Visible: =!(mode = "edit")
+            Width: =260
+            X: =51
+            Y: =160
+            ZIndex: =8
+
+        gs_grader_label As label:
+            Height: =60
+            Size: =19
+            Text: =LookUp(User_table,ID = grader_id,name)
+            Visible: =!(mode = "edit")
+            Width: =230
+            X: =330
+            Y: =160
+            ZIndex: =9
+
+        gs_venue_label As label:
+            Height: =60
+            Size: =19
+            Text: =LookUp(Venue_table,ID = venue_id,name)
+            Visible: =!(mode = "edit")
+            Width: =144
+            X: =580
+            Y: =160
+            ZIndex: =10
+
+    tab_group_4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =15
+
+        Rectangle3_4 As rectangle:
+            Width: =Parent.Width
+            ZIndex: =11
+
+        Icon1_11 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =Navigate(
+                    If(mode = "new",GradingCertification_screen,List_screen)
+                )
+            Width: =60
+            X: =40
+            Y: =20
+            ZIndex: =12
+
+        Label3_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Size: =22
+            Text: |-
+                =If(
+                    mode = "new",
+                    "採点者画面：点数入力画面",
+                    "管理者画面：詳細表示画面"
+                )
+            Width: =560
+            X: =133
+            Y: =20
+            ZIndex: =13
+
+        Icon1_1 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Login_screen)
+            Width: =60
+            X: =1030
+            Y: =20
+            ZIndex: =14
+
+    gs_infoDropdowns As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =18
+
+        Dropdown1 As dropdown:
+            Height: =60
+            Items: =Group_table.name
+            OnChange: |-
+                =UpdateContext({group_id:LookUp(Group_table,name = Self.Selected.name,ID)})
+            Size: =19
+            Visible: =mode = "edit"
+            Width: =260
+            X: =51
+            Y: =160
+            ZIndex: =15
+
+        Dropdown2 As dropdown:
+            Height: =60
+            Items: =User_table.name
+            OnChange: =DataCardValue
+            Size: =19
+            Visible: =mode = "edit"
+            Width: =230
+            X: =330
+            Y: =160
+            ZIndex: =16
+
+        Dropdown3 As dropdown:
+            Height: =60
+            Items: =Venue_table.name
+            OnChange: =DataCardValue
+            Size: =19
+            Visible: =mode = "edit"
+            Width: =144
+            X: =580
+            Y: =160
+            ZIndex: =17
 
