@@ -17,8 +17,18 @@ Modeselect_screen As screen:
         Text: ="集計画面"
         Width: =400
         X: =340
-        Y: =400
+        Y: =312
         ZIndex: =2
+
+    Button4_4 As button:
+        Height: =100
+        OnSelect: =Navigate(Management_Screen)
+        Size: =24
+        Text: ="データ管理画面"
+        Width: =400
+        X: =340
+        Y: =479
+        ZIndex: =7
 
     tab_group As group:
         Height: =5

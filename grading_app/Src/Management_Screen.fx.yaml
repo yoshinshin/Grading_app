@@ -1,6 +1,6 @@
 Management_Screen As screen:
     OnVisible: |-
-        =UpdateContext({del_v:false,editv:false,selected_tab:"group"})
+        =UpdateContext({del_v:false,editv:false,selected_tab:"group",isNew:false})
 
     tab_group_5 As group:
         Height: =5
@@ -243,13 +243,14 @@ Management_Screen As screen:
 
         Form1 As form:
             DataSource: =If(selected_tab = "group",Group_table,User_table)
+            DefaultMode: =If(isNew,FormMode.New,FormMode.Edit)
             Height: =457
             Item: |-
-                =If(
+                =If(!isNew,If(
                     selected_tab = "group",
                     LookUp(Group_table,ID = selected_id),
                     LookUp(User_table,ID = selected_id)
-                )
+                ))
             Visible: =editv
             Width: =547
             X: =579
@@ -270,7 +271,7 @@ Management_Screen As screen:
                 ZIndex: =1
 
                 TextInput10 As text:
-                    Default: =LookUp(Group_table,ID = selected_id,name)
+                    Default: =If(isNew,"",LookUp(Group_table,ID = selected_id,name))
                     Height: =49
                     Size: =18
                     Width: =476
@@ -309,7 +310,7 @@ Management_Screen As screen:
                     ZIndex: =1
 
                 TextInput10_1 As text:
-                    Default: =LookUp(User_table,ID = selected_id,name)
+                    Default: =If(isNew,"",LookUp(User_table,ID = selected_id,name))
                     Height: =49
                     Size: =18
                     Width: =476
@@ -321,7 +322,7 @@ Management_Screen As screen:
             Color: =RGBA(56, 96, 178, 1)
             Height: =70
             Size: =23
-            Text: ="編集画面"
+            Text: =If(isNew,"新規作成","編集画面")
             Visible: =editv
             Width: =437
             X: =593
@@ -331,13 +332,13 @@ Management_Screen As screen:
         Button3 As button:
             Height: =51
             OnSelect: |-
-                =If(selected_tab = "group",Patch(Group_table,LookUp(Group_table,ID=selected_id),{
+                =If(selected_tab = "group",Patch(Group_table,If(isNew,Defaults(Group_table),LookUp(Group_table,ID=selected_id)),{
                     name:TextInput10.Text
                 }));
-                If(selected_tab = "grader",Patch(User_table,LookUp(User_table,ID=selected_id),{
+                If(selected_tab = "grader",Patch(User_table,If(isNew,Defaults(Group_table),LookUp(User_table,ID=selected_id)),{
                     name:TextInput10_1.Text
                 }));
-                UpdateContext({editv:false})
+                UpdateContext({editv:false,isNew:false})
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -434,12 +435,29 @@ Management_Screen As screen:
             Y: =405
             ZIndex: =22
 
-    Icon8 As icon.Compose:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =60
-        Icon: =Icon.Compose
-        OnSelect: =
-        X: =945
-        Y: =20
+    AddButton As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
         ZIndex: =25
+
+        Circle1 As circle:
+            OnSelect: |-
+                =UpdateContext({editv:true,isNew:true})
+            Visible: =!editv
+            X: =990
+            Y: =502
+            ZIndex: =23
+
+        Icon8 As icon.Compose:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.Compose
+            OnSelect: |-
+                =UpdateContext({editv:true,isNew:true})
+            Visible: =!editv
+            X: =1008
+            Y: =522
+            ZIndex: =24
 
