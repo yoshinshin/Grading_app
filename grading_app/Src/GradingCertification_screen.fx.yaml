@@ -19,7 +19,7 @@ GradingCertification_screen As screen:
     Button2 As button:
         Height: =70
         OnSelect: |-
-            =Navigate(Grading_screen, ScreenTransition,{venue_id:room_dropdown.Selected.ID,grader_id:grader_dropdown.Selected.ID,group_id:group_dropdown.Selected.ID})
+            =Navigate(Grading_screen, ScreenTransition,{venue_id:room_dropdown.Selected.ID,grader_id:LookUp(User_table,name = grader_dropdown.Selected.name,ID),group_id:group_dropdown.Selected.ID})
         Size: =24
         Text: ="採点画面へ"
         Width: =280
@@ -29,7 +29,7 @@ GradingCertification_screen As screen:
 
     grader_dropdown As dropdown:
         Height: =70
-        Items: =Filter(User_table,!(name = "管理者"))
+        Items: =User_table.name
         Size: =21
         Width: =446
         X: =633

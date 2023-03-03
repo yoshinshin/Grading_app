@@ -4,7 +4,6 @@ View_screen As screen:
 
     Form1_1 As form:
         DataSource: =Grading_table
-        DefaultMode: =FormMode.View
         Height: =484
         Item: =List_gallery.Selected
         NumberOfColumns: =6

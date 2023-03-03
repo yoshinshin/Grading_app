@@ -60,7 +60,7 @@ ScoreSummaryTable As screen:
     Icon1_7 As icon.ChevronLeft:
         Icon: =Icon.ChevronLeft
         OnSelect: =Navigate(Modeselect_screen, ScreenTransition)
-        X: =60
+        X: =40
         Y: =40
         ZIndex: =17
 

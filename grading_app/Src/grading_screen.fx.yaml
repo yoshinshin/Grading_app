@@ -52,7 +52,6 @@ Grading_screen As screen:
         DataSource: =Grading_table
         DefaultMode: =FormMode.New
         Height: =484
-        Item: =List_gallery.Selected
         NumberOfColumns: =6
         SnapToColumns: =false
         Width: =1097
