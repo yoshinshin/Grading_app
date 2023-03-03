@@ -1,5 +1,7 @@
 Grading_screen As screen:
-    OnVisible: =NewForm(NewForm);
+    OnVisible: |-
+        =NewForm(NewForm);
+        ResetForm(NewForm)
 
     DoneButton As button:
         Height: =70
@@ -62,7 +64,7 @@ Grading_screen As screen:
         group_id_DataCard3_2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Group_id"
-            Default: =ThisItem.group_id
+            Default: =group_id
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"Group_id")
             Fill: =RGBA(0, 0, 0, 0)
@@ -612,7 +614,7 @@ Grading_screen As screen:
         user_id_DataCard1_2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="User_id"
-            Default: =ThisItem.user_id
+            Default: =grader_id
             DisplayMode: = DisplayMode.View
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"User_id")
             Fill: =RGBA(0, 0, 0, 0)
@@ -686,7 +688,7 @@ Grading_screen As screen:
         venue_id_DataCard1_2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="venue_id"
-            Default: =ThisItem.venue_id
+            Default: =venue_id
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@Grading_table],DataSourceInfo.DisplayName,"venue_id")
             Fill: =RGBA(0, 0, 0, 0)
