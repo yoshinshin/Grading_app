@@ -64,115 +64,92 @@ ScoreSummaryTable As screen:
         Y: =40
         ZIndex: =17
 
-    Label2 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Aグループ"
-        Width: =154
-        X: =78
-        Y: =201
-        ZIndex: =18
-
-    Label2_1 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Bグループ"
-        Width: =154
-        X: =78
-        Y: =271
-        ZIndex: =19
-
-    Label2_2 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Aさん"
-        Width: =154
-        X: =278
-        Y: =201
-        ZIndex: =20
-
-    Label2_3 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Bさん"
-        Width: =154
-        X: =473
-        Y: =271
-        ZIndex: =21
-
-    Label2_4 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Aさん"
-        Width: =154
-        X: =278
-        Y: =271
-        ZIndex: =22
-
-    Label2_5 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="Bさん"
-        Width: =154
-        X: =473
-        Y: =201
-        ZIndex: =23
-
-    Label2_6 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="15"
-        Width: =154
-        X: =683
-        Y: =201
-        ZIndex: =24
-
-    Label2_7 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="15"
-        Width: =154
-        X: =683
-        Y: =271
-        ZIndex: =25
-
     total_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(39, 113, 194, 1)
         Height: =56
         Size: =16
-        Text: ="偏差値"
+        Text: ="偏差点"
         Width: =220
-        X: =870
-        Y: =145
+        X: =895
+        Y: =425
         ZIndex: =27
 
-    Label2_9 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="50"
-        Width: =154
-        X: =904
-        Y: =271
-        ZIndex: =29
-
-    Label2_10 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =16
-        Text: ="50"
-        Width: =154
-        X: =904
+    Gallery1 As gallery.galleryHorizontal:
+        DelayItemLoading: =true
+        Height: =418
+        Items: =Grading_table
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |-
+            =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
+        ShowScrollbar: =false
+        TemplateSize: =812
+        Width: =817
+        X: =53
         Y: =201
-        ZIndex: =30
+        ZIndex: =31
+
+        Label12 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.user_id
+            Width: =134
+            X: =226
+            ZIndex: =1
+
+        Label12_1 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.user_id
+            Width: =134
+            X: =430
+            ZIndex: =2
+
+        Label12_2 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.group_id
+            Width: =134
+            X: =30
+            ZIndex: =3
+
+        Label12_3 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =Text(Value(ThisItem.evaluation_total, "ja"), "0", "ja")
+            Width: =134
+            X: =632
+            ZIndex: =4
+
+    Gallery4 As gallery.variableTemplateHeightGallery:
+        DelayItemLoading: =true
+        Height: =120
+        Items: =Grading_table
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =115
+        Width: =220
+        X: =896
+        Y: =489
+        ZIndex: =32
+
+        Label15 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =Text(Value(Text(Value(ThisItem.evaluation_total, "ja"), "0", "ja")
+            Tooltip: =
+            Width: =210
+            ZIndex: =1
 
