@@ -1,14 +1,5 @@
 ScoreSummaryTable As screen:
 
-    room_dropdown_1 As dropdown:
-        Height: =66
-        Items: =Filter(Venue_table, date = date_dropdown.Selected.Result)
-        Size: =21
-        Width: =446
-        X: =165
-        Y: =40
-        ZIndex: =1
-
     group_1 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
@@ -76,60 +67,6 @@ ScoreSummaryTable As screen:
         Y: =425
         ZIndex: =27
 
-    Gallery1 As gallery.galleryHorizontal:
-        DelayItemLoading: =true
-        Height: =418
-        Items: =Grading_table
-        LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: |-
-            =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
-        ShowScrollbar: =false
-        TemplateSize: =812
-        Width: =817
-        X: =53
-        Y: =201
-        ZIndex: =31
-
-        Label12 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =ThisItem.user_id
-            Width: =134
-            X: =226
-            ZIndex: =1
-
-        Label12_1 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =ThisItem.user_id
-            Width: =134
-            X: =430
-            ZIndex: =2
-
-        Label12_2 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =ThisItem.group_id
-            Width: =134
-            X: =30
-            ZIndex: =3
-
-        Label12_3 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =Text(Value(ThisItem.evaluation_total, "ja"), "0", "ja")
-            Width: =134
-            X: =632
-            ZIndex: =4
-
     Gallery4 As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
         Height: =120
@@ -148,8 +85,73 @@ ScoreSummaryTable As screen:
             Height: =70
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =Text(Value(Text(Value(ThisItem.evaluation_total, "ja"), "0", "ja")
+            Text: =
             Tooltip: =
             Width: =210
             ZIndex: =1
+
+    Gallery5 As gallery.galleryVertical:
+        Height: =386
+        Items: =Grading_table
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+        Width: =825
+        X: =50
+        Y: =202
+        ZIndex: =33
+
+        Label2 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
+            Width: =165
+            X: =15
+            ZIndex: =1
+
+        Label2_1 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =LookUp(User_table,ID = ThisItem.user_id,name)
+            Width: =101
+            X: =246
+            ZIndex: =2
+
+        Label2_2 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.タイトル
+            Width: =101
+            X: =440
+            ZIndex: =3
+
+        Label2_3 As label:
+            Align: =Align.Center
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =Text(Value(Round(ThisItem.evaluation_total,0))
+            Width: =101
+            X: =655
+            ZIndex: =4
+
+    Venue_dropdown_4 As dropdown:
+        Height: =63
+        Items: =venue_col.name
+        OnChange: |-
+            =UpdateContext({
+                isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
+            })
+        Size: =24
+        Width: =344
+        X: =224
+        Y: =41
+        ZIndex: =34
 
