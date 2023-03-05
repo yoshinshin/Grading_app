@@ -92,7 +92,10 @@ ScoreSummaryTable As screen:
 
     Gallery5 As gallery.galleryVertical:
         Height: =386
-        Items: =Grading_table
+        Items: |
+            =If(isDef_venue,true,venue_id = LookUp(Venue_table,name = Venue_dropdown_4.Selected.name,ID))
+            )
+            Filter(Grading_table,venue_id = dropdown.selected.result)
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
