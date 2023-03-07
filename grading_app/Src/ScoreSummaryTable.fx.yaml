@@ -7,8 +7,8 @@ ScoreSummaryTable As screen:
         Height: =50
         Size: =16
         Text: ="グループ"
-        X: =50
-        Y: =200
+        X: =79
+        Y: =244
         ZIndex: =3
 
     grader_1 As label:
@@ -19,8 +19,8 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="採点者1"
         Width: =100
-        X: =200
-        Y: =200
+        X: =229
+        Y: =244
         ZIndex: =4
 
     total_1 As label:
@@ -31,8 +31,8 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="合計点"
         Width: =151
-        X: =600
-        Y: =200
+        X: =629
+        Y: =244
         ZIndex: =14
 
     grader_2 As label:
@@ -43,8 +43,8 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="採点者2"
         Width: =100
-        X: =300
-        Y: =200
+        X: =329
+        Y: =244
         ZIndex: =15
 
     total_2 As label:
@@ -55,8 +55,8 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="偏差点"
         Width: =221
-        X: =837
-        Y: =200
+        X: =836
+        Y: =244
         ZIndex: =27
 
     Gallery4 As gallery.variableTemplateHeightGallery:
@@ -68,8 +68,8 @@ ScoreSummaryTable As screen:
         ShowScrollbar: =false
         TemplateSize: =115
         Width: =220
-        X: =896
-        Y: =489
+        X: =836
+        Y: =288
         ZIndex: =32
 
         Label15 As label:
@@ -83,23 +83,23 @@ ScoreSummaryTable As screen:
             ZIndex: =1
 
     Gallery5 As gallery.galleryVertical:
-        Height: =392
+        Height: =289
         Items: =Grading_table
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
         TemplateSize: =55
-        Width: =745
-        X: =50
-        Y: =248
+        Width: =701
+        X: =79
+        Y: =292
         ZIndex: =33
 
         Label2 As label:
             Align: =Align.Center
             Height: =70
             OnSelect: =Select(Parent)
-            Size: =21
-            Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
+            Size: =18
+            Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
             Width: =135
             ZIndex: =1
 
@@ -120,7 +120,7 @@ ScoreSummaryTable As screen:
             Size: =21
             Text: =Round(ThisItem.evaluation_total,0)
             Width: =101
-            X: =570
+            X: =568
             ZIndex: =4
 
         Label2_2 As label:
@@ -162,8 +162,8 @@ ScoreSummaryTable As screen:
             })
         Size: =18
         Width: =300
-        X: =50
-        Y: =125
+        X: =79
+        Y: =147
         ZIndex: =34
 
     grader_3 As label:
@@ -174,8 +174,8 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="採点者3"
         Width: =100
-        X: =400
-        Y: =200
+        X: =429
+        Y: =244
         ZIndex: =39
 
     tab_group_6 As group:
@@ -227,7 +227,7 @@ ScoreSummaryTable As screen:
         Size: =16
         Text: ="採点者4"
         Width: =100
-        X: =500
-        Y: =200
+        X: =529
+        Y: =244
         ZIndex: =40
 
