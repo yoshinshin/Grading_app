@@ -1,5 +1,15 @@
 ScoreSummaryTable As screen:
 
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(39, 113, 194, 1)
+        BorderThickness: =5
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =65
+        Width: =243
+        X: =830
+        Y: =504
+        ZIndex: =1
+
     group_1 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
@@ -9,7 +19,7 @@ ScoreSummaryTable As screen:
         Text: ="グループ"
         X: =79
         Y: =244
-        ZIndex: =3
+        ZIndex: =2
 
     grader_1 As label:
         Align: =Align.Center
@@ -21,7 +31,7 @@ ScoreSummaryTable As screen:
         Width: =100
         X: =229
         Y: =244
-        ZIndex: =4
+        ZIndex: =3
 
     total_1 As label:
         Align: =Align.Center
@@ -33,7 +43,7 @@ ScoreSummaryTable As screen:
         Width: =151
         X: =629
         Y: =244
-        ZIndex: =14
+        ZIndex: =4
 
     grader_2 As label:
         Align: =Align.Center
@@ -45,46 +55,22 @@ ScoreSummaryTable As screen:
         Width: =100
         X: =329
         Y: =244
-        ZIndex: =15
+        ZIndex: =5
 
     total_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(39, 113, 194, 1)
-        Height: =48
+        Height: =66
         Size: =16
         Text: ="偏差点"
-        Width: =221
-        X: =836
-        Y: =244
-        ZIndex: =27
-
-    Gallery4 As gallery.variableTemplateHeightGallery:
-        DelayItemLoading: =true
-        Height: =120
-        Items: =Grading_table
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        ShowScrollbar: =false
-        TemplateSize: =115
-        Width: =220
-        X: =836
-        Y: =288
-        ZIndex: =32
-
-        Label15 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =
-            Tooltip: =
-            Width: =210
-            ZIndex: =1
+        Width: =123
+        X: =830
+        Y: =504
+        ZIndex: =6
 
     Gallery5 As gallery.galleryVertical:
         Height: =289
-        Items: =Grading_table
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
@@ -92,7 +78,7 @@ ScoreSummaryTable As screen:
         Width: =701
         X: =79
         Y: =292
-        ZIndex: =33
+        ZIndex: =7
 
         Label2 As label:
             Align: =Align.Center
@@ -155,16 +141,13 @@ ScoreSummaryTable As screen:
 
     Venue_dropdown_4 As dropdown:
         Height: =50
-        Items: =venue_col.name
-        OnChange: |-
-            =UpdateContext({
-                isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
-            })
+        Items: =["会場を選択","本選","予選"]
+        OnChange: =
         Size: =18
         Width: =300
         X: =79
         Y: =147
-        ZIndex: =34
+        ZIndex: =8
 
     grader_3 As label:
         Align: =Align.Center
@@ -176,48 +159,7 @@ ScoreSummaryTable As screen:
         Width: =100
         X: =429
         Y: =244
-        ZIndex: =39
-
-    tab_group_6 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =20
-        ZIndex: =39
-
-        Rectangle3_6 As rectangle:
-            Width: =Parent.Width
-            ZIndex: =35
-
-        Icon1_12 As icon.ChevronLeft:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =60
-            Icon: =Icon.ChevronLeft
-            OnSelect: =Navigate(Modeselect_screen, ScreenTransition)
-            Width: =60
-            X: =40
-            Y: =20
-            ZIndex: =36
-
-        Label3_6 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =60
-            Size: =22
-            Text: ="集計画面"
-            Width: =560
-            X: =133
-            Y: =20
-            ZIndex: =37
-
-        Icon1_7 As icon.Home:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =60
-            Icon: =Icon.Home
-            OnSelect: =Navigate(Login_screen)
-            Width: =60
-            X: =1030
-            Y: =20
-            ZIndex: =38
+        ZIndex: =13
 
     grader_4 As label:
         Align: =Align.Center
@@ -229,5 +171,71 @@ ScoreSummaryTable As screen:
         Width: =100
         X: =529
         Y: =244
-        ZIndex: =40
+        ZIndex: =14
+
+    Gallery3 As gallery.variableTemplateHeightGallery:
+        DelayItemLoading: =true
+        Height: =109
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =66
+        Width: =134
+        X: =946
+        Y: =499
+        ZIndex: =15
+
+    Venue_dropdown_5 As dropdown:
+        Height: =50
+        Items: =venue_col.name
+        OnChange: |-
+            =UpdateContext({
+                isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
+            })
+        Size: =18
+        Width: =300
+        X: =429
+        Y: =147
+        ZIndex: =16
+
+    tab_group_6 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =20
+        ZIndex: =39
+
+        Rectangle3_6 As rectangle:
+            Width: =Parent.Width
+            ZIndex: =9
+
+        Icon1_12 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Modeselect_screen, ScreenTransition)
+            Width: =60
+            X: =40
+            Y: =20
+            ZIndex: =10
+
+        Label3_6 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Size: =22
+            Text: ="集計画面"
+            Width: =560
+            X: =133
+            Y: =20
+            ZIndex: =11
+
+        Icon1_7 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Login_screen)
+            Width: =60
+            X: =1030
+            Y: =20
+            ZIndex: =12
 
