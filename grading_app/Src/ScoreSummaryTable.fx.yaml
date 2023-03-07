@@ -91,18 +91,17 @@ ScoreSummaryTable As screen:
             ZIndex: =1
 
     Gallery5 As gallery.galleryVertical:
-        Height: =386
-        Items: |
+        Height: =392
+        Items: |-
             =If(isDef_venue,true,venue_id = LookUp(Venue_table,name = Venue_dropdown_4.Selected.name,ID))
             )
-            Filter(Grading_table,venue_id = dropdown.selected.result)
         Layout: =Layout.Vertical
         OnSelect: |-
             =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
         TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
-        Width: =825
-        X: =50
-        Y: =202
+        Width: =815
+        X: =55
+        Y: =201
         ZIndex: =33
 
         Label2 As label:
@@ -110,7 +109,7 @@ ScoreSummaryTable As screen:
             Height: =70
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
+            Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
             Width: =165
             X: =15
             ZIndex: =1

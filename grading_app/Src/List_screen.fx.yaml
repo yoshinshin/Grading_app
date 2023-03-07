@@ -55,7 +55,7 @@ List_screen As screen:
                 Align: =Align.Center
                 Height: =49
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
                 Width: =106
                 X: =21
