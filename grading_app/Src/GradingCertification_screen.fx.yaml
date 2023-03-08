@@ -87,7 +87,8 @@ GradingCertification_screen As screen:
 
     date_dropdown As dropdown:
         Height: =66
-        Items: =Distinct(Venue_table,date).Result
+        Items: |-
+            =ForAll(Distinct(Venue_table,date), {Result: ThisRecord.Value}).Result
         Size: =21
         Width: =446
         X: =633

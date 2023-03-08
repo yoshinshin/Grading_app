@@ -75,7 +75,7 @@ List_screen As screen:
                 Align: =Align.Center
                 Height: =49
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =14.5
                 Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
                 Width: =112
                 X: =242

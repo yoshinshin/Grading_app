@@ -189,12 +189,14 @@ ScoreSummaryTable As screen:
         Height: =50
         Items: =venue_col.name
         OnChange: |-
-            =UpdateContext({
+            =If(IsBlank(Venue_dropdown_4.Selected.Value),
+            Distinct(Grading_table,venue_id),
+            UpdateContext({
                 isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
-            })
+            }))
         Size: =18
         Width: =300
-        X: =429
+        X: =480
         Y: =147
         ZIndex: =16
 
