@@ -1,9 +1,12 @@
 ScoreSummaryTable As screen:
     OnVisible: |-
         =ClearCollect(grouped,GroupBy(Grading_table,"Group_id","value"));
-        Collect(grouped,AddColumns(
+        ClearCollect(grouped,AddColumns(
             GroupBy(Grading_table,"Group_id","value"),
-            "grader_1",Index(value,1).user_id
+            "grader1_id",Index(value,1).user_id,
+            "grader1_total",Round(Index(value,1).evaluation_total,0),
+            "grader2_id",Index(value,2).user_id,
+            "grader2_total",Round(Index(value,2).evaluation_total,0)
             ));
 
     group_1 As label:
@@ -79,7 +82,7 @@ ScoreSummaryTable As screen:
             Height: =50
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =ThisItem.Group_id
+            Text: =LookUp(Group_table,ID=ThisItem.Group_id,name)
             Width: =200
             X: =21
             Y: =5
@@ -90,7 +93,7 @@ ScoreSummaryTable As screen:
             Height: =50
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =Concatenate(LookUp(User_table,ID=Index(LookUp(grouped,Group_id = ThisItem.Group_id,value),1).user_id,name),"：",Round(Index(LookUp(grouped,Group_id = ThisItem.Group_id,value),1).evaluation_total,0))
+            Text: =Concatenate(LookUp(User_table,ID=ThisItem.grader1_id,name),"：",ThisItem.grader1_total)
             Width: =200
             X: =221
             Y: =5
@@ -101,7 +104,7 @@ ScoreSummaryTable As screen:
             Height: =50
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =Concatenate(LookUp(User_table,ID=Index(LookUp(grouped,Group_id = Group_id,value),2).user_id,name),"：",Round(Index(LookUp(grouped,Group_id = ThisItem.Group_id,value),2).evaluation_total,0))
+            Text: =Concatenate(LookUp(User_table,ID=ThisItem.grader2_id,name),"：",ThisItem.grader2_total)
             Width: =200
             X: =421
             Y: =5
@@ -112,7 +115,7 @@ ScoreSummaryTable As screen:
             Height: =50
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =Index(LookUp(grouped,Group_id = ThisItem.Group_id,value),1).evaluation_total+Index(LookUp(grouped,Group_id = ThisItem.Group_id,value),2).evaluation_total
+            Text: =ThisItem.grader1_total+ThisItem.grader2_total
             X: =621
             Y: =5
             ZIndex: =4
@@ -122,7 +125,7 @@ ScoreSummaryTable As screen:
             Height: =50
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =Label12_3
+            Text: ="Text"
             X: =778
             Y: =5
             ZIndex: =5
