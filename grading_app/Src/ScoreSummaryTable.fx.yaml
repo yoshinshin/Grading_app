@@ -1,7 +1,7 @@
 ScoreSummaryTable As screen:
     OnVisible: |-
         =ClearCollect(grouped,GroupBy(Grading_table,"Group_id","grouped_value"));
-        UpdateContext({id:grouped.grouped_value})
+        UpdateContext({id:LookUp(grouped,Group_id = 1,grouped_value)})
 
     group_1 As label:
         Align: =Align.Center
