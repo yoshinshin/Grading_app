@@ -1,7 +1,7 @@
 ScoreSummaryTable As screen:
     OnVisible: |-
         =ClearCollect(grouped,GroupBy(Grading_table,"Group_id","value"));
-        ClearCollect(grouped,AddColumns(
+        Collect(grouped,AddColumns(
             GroupBy(Grading_table,"Group_id","value"),
             "grader_1",Index(value,1).user_id
             );
