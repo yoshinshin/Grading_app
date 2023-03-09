@@ -4,7 +4,7 @@ ScoreSummaryTable As screen:
         Collect(grouped,AddColumns(
             GroupBy(Grading_table,"Group_id","value"),
             "grader_1",Index(value,1).user_id
-            );
+            ));
 
     group_1 As label:
         Align: =Align.Center
