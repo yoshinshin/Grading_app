@@ -53,7 +53,7 @@ List_screen As screen:
 
             group_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
                 Size: =15
                 Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
@@ -63,9 +63,9 @@ List_screen As screen:
 
             grader_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =LookUp(User_table,ID = ThisItem.user_id,name)
                 Width: =112
                 X: =130
@@ -73,9 +73,9 @@ List_screen As screen:
 
             vanue_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =14.5
+                Size: =15
                 Text: =LookUp(Venue_table,ID = ThisItem.venue_id,name)
                 Width: =112
                 X: =242
@@ -83,9 +83,9 @@ List_screen As screen:
 
             date_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =Text(LookUp(Venue_table,ID = ThisItem.venue_id,date),"mm/dd")
                 Width: =112
                 X: =354
@@ -93,9 +93,9 @@ List_screen As screen:
 
             room_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =LookUp(Venue_table,ID = ThisItem.venue_id,room_name)
                 Width: =112
                 X: =466
@@ -103,9 +103,9 @@ List_screen As screen:
 
             eval1_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_1
                 Width: =71
                 X: =578
@@ -113,9 +113,9 @@ List_screen As screen:
 
             eval2_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_2
                 Width: =71
                 X: =649
@@ -123,9 +123,9 @@ List_screen As screen:
 
             eval3_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_3
                 Width: =71
                 X: =720
@@ -133,9 +133,9 @@ List_screen As screen:
 
             eval4_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_4
                 Width: =71
                 X: =788
@@ -143,9 +143,9 @@ List_screen As screen:
 
             eval5_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_5
                 Width: =72
                 X: =848
@@ -153,9 +153,9 @@ List_screen As screen:
 
             eval6_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =ThisItem.evaluation_6
                 Width: =65
                 X: =920
@@ -163,9 +163,9 @@ List_screen As screen:
 
             total_val As label:
                 Align: =Align.Center
-                Height: =49
+                Height: =50
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =15
                 Text: =Round(ThisItem.evaluation_total,0)
                 Width: =71
                 X: =985

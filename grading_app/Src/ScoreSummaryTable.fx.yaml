@@ -1,14 +1,7 @@
 ScoreSummaryTable As screen:
-
-    Rectangle4 As rectangle:
-        BorderColor: =RGBA(39, 113, 194, 1)
-        BorderThickness: =5
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =65
-        Width: =243
-        X: =830
-        Y: =504
-        ZIndex: =1
+    OnVisible: |-
+        =Collect(grouped,GroupBy(Grading_table,"Group_id","grouped_value"));
+        UpdateContext({id:grouped.Group_id})
 
     group_1 As label:
         Align: =Align.Center
@@ -17,8 +10,9 @@ ScoreSummaryTable As screen:
         Height: =50
         Size: =16
         Text: ="グループ"
-        X: =79
-        Y: =244
+        Width: =200
+        X: =118
+        Y: =149
         ZIndex: =2
 
     grader_1 As label:
@@ -28,9 +22,9 @@ ScoreSummaryTable As screen:
         Height: =50
         Size: =16
         Text: ="採点者1"
-        Width: =100
-        X: =229
-        Y: =244
+        Width: =200
+        X: =318
+        Y: =149
         ZIndex: =3
 
     total_1 As label:
@@ -40,9 +34,8 @@ ScoreSummaryTable As screen:
         Height: =50
         Size: =16
         Text: ="合計点"
-        Width: =151
-        X: =629
-        Y: =244
+        X: =718
+        Y: =149
         ZIndex: =4
 
     grader_2 As label:
@@ -52,153 +45,53 @@ ScoreSummaryTable As screen:
         Height: =50
         Size: =16
         Text: ="採点者2"
-        Width: =100
-        X: =329
-        Y: =244
+        Width: =200
+        X: =518
+        Y: =149
         ZIndex: =5
 
     total_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(39, 113, 194, 1)
-        Height: =66
+        Height: =50
         Size: =16
         Text: ="偏差点"
-        Width: =123
-        X: =830
-        Y: =504
-        ZIndex: =6
-
-    Gallery5 As gallery.galleryVertical:
-        Height: =289
-        Layout: =Layout.Vertical
-        OnSelect: |-
-            =Navigate(Grading_screen,ScreenTransition.None,{mode:"view",group_id:List_gallery.Selected.group_id,grader_id:List_gallery.Selected.user_id,venue_id:List_gallery.Selected.venue_id})
-        TemplateSize: =55
-        Width: =701
-        X: =79
-        Y: =292
-        ZIndex: =7
-
-        Label2 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =18
-            Text: =LookUp(Group_table, ID = ThisItem.group_id,name)
-            Width: =135
-            ZIndex: =1
-
-        Label2_1 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =LookUp(User_table,ID = ThisItem.user_id,name)
-            Width: =108
-            X: =135
-            ZIndex: =2
-
-        Label2_3 As label:
-            Align: =Align.Center
-            Height: =55
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =Round(ThisItem.evaluation_total,0)
-            Width: =101
-            X: =568
-            ZIndex: =4
-
-        Label2_2 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =LookUp(User_table,ID = ThisItem.user_id,name)
-            Width: =103
-            X: =243
-            ZIndex: =5
-
-        Label2_4 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =LookUp(User_table,ID = ThisItem.user_id,name)
-            Width: =96
-            X: =346
-            ZIndex: =6
-
-        Label2_5 As label:
-            Align: =Align.Center
-            Height: =70
-            OnSelect: =Select(Parent)
-            Size: =21
-            Text: =LookUp(User_table,ID = ThisItem.user_id,name)
-            Width: =97
-            X: =446
-            ZIndex: =7
-
-    Venue_dropdown_4 As dropdown:
-        Height: =50
-        Items: =["会場を選択","本選","予選"]
-        OnChange: =
-        Size: =18
-        Width: =300
-        X: =79
-        Y: =147
-        ZIndex: =8
-
-    grader_3 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(39, 113, 194, 1)
-        Height: =50
-        Size: =16
-        Text: ="採点者3"
-        Width: =100
-        X: =429
-        Y: =244
-        ZIndex: =13
-
-    grader_4 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(39, 113, 194, 1)
-        Height: =50
-        Size: =16
-        Text: ="採点者4"
-        Width: =100
-        X: =529
-        Y: =244
-        ZIndex: =14
-
-    Gallery3 As gallery.variableTemplateHeightGallery:
-        DelayItemLoading: =true
-        Height: =109
-        Items: =CustomGallerySample
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =66
-        Width: =134
-        X: =946
-        Y: =499
+        X: =868
+        Y: =149
         ZIndex: =15
 
-    Venue_dropdown_5 As dropdown:
-        Height: =50
-        Items: =venue_col.name
-        OnChange: |-
-            =If(IsBlank(Venue_dropdown_4.Selected.Value),
-            Distinct(Grading_table,venue_id),
-            UpdateContext({
-                isDef_venue:LookUp(venue_col,name = Self.Selected.name,isDef)
-            }))
-        Size: =18
-        Width: =300
-        X: =480
-        Y: =147
+    Gallery3 As gallery.galleryVertical:
+        Height: =436
+        Items: =grouped
+        Layout: =Layout.Vertical
+        TemplateSize: =60
+        Width: =940
+        X: =90
+        Y: =200
         ZIndex: =16
+
+        Label12 As label:
+            Align: =Align.Center
+            Height: =50
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Group_id
+            Width: =200
+            X: =5
+            Y: =5
+            ZIndex: =1
+
+        Label12_1 As label:
+            Align: =Align.Center
+            Height: =50
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =
+            Width: =200
+            X: =205
+            Y: =5
+            ZIndex: =2
 
     tab_group_6 As group:
         Height: =5
