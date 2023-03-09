@@ -1,10 +1,7 @@
 ScoreSummaryTable As screen:
     OnVisible: |-
         =ClearCollect(grouped,GroupBy(Grading_table,"Group_id","value"));
-        AddColumns(grouped,
-        "val_1",Index(value,1),
-        "val_2",Index(value,2)
-        )
+        UpdateContext({value:Index(grouped.value,1).value})
 
     group_1 As label:
         Align: =Align.Center

@@ -2624,6 +2624,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "ScoreSummaryTable.value"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ScoreSummaryTable.value",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "value",
+                "module": "ScoreSummaryTable",
+                "type": "ScoreSummaryTable"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Grading_screen.Form.Item"
                 }
               ],
@@ -2647,7 +2677,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -2677,7 +2707,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
+          "ruleIndex": 4
         }
       ],
       "tool": {
@@ -2756,23 +2786,6 @@
               }
             },
             {
-              "id": "app-InefficientDelayLoading",
-              "messageStrings": {
-                "issue": {
-                  "text": "非効率な遅延読み込み"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "画面間で状態を共有するには、代わりに、変数、コレクション、ナビゲーション コンテキストを使用してください。"
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "他の画面上のコントロールを参照するコントロールがあると、アプリの読み込みとナビゲーションが遅くなる場合があります。これを行うと、ユーザーが他の画面に移動するまで待機するのではなく、アプリでその画面が直ちに読み込まれる可能性があります。"
-              }
-            },
-            {
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
@@ -2787,6 +2800,23 @@
                 "level": "Medium",
                 "primaryCategory": "performance",
                 "whyFix": "この変数は、宣言されていますが、どのコントロールによっても参照されていないため、不要です。"
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "非効率な遅延読み込み"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "画面間で状態を共有するには、代わりに、変数、コレクション、ナビゲーション コンテキストを使用してください。"
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "他の画面上のコントロールを参照するコントロールがあると、アプリの読み込みとナビゲーションが遅くなる場合があります。これを行うと、ユーザーが他の画面に移動するまで待機するのではなく、アプリでその画面が直ちに読み込まれる可能性があります。"
               }
             }
           ],
